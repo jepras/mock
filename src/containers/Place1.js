@@ -6,12 +6,15 @@ import { FormContext } from "../contexts/FormContext";
 
 import getMapOptions from "../assets/getMapOptions";
 
-/* location.locations[0].location */
-
-const Place1 = () => {
-  const { handleNext } = useContext(StepContext);
+const Place1 = (props) => {
+  const { handleNext, activeStep } = useContext(StepContext);
   const { location } = useContext(FormContext);
-  console.log("location", location);
+  console.log("location & active step", location, activeStep);
+
+  if (activeStep === 2) {
+    console.log("hey!", activeStep);
+    console.log("props", props);
+  }
 
   const [defaultMap] = useState({
     zoom: 18,

@@ -6,8 +6,9 @@ const StepContextProvider = (props) => {
   const [activeStep, setActiveStep] = useState(0);
   const steps = getSteps();
 
-  const handleNext = () => {
+  const handleNext = (state) => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    console.log("whats in state?", state);
   };
 
   function getSteps() {

@@ -12,7 +12,7 @@ import Place3 from "../containers/Place3";
 import End from "../containers/End";
 
 const Experience = () => {
-  const { steps, activeStep } = useContext(StepContext);
+  const { activeStep } = useContext(StepContext);
 
   function getStepContent(step) {
     switch (step) {
@@ -38,24 +38,29 @@ const Experience = () => {
   }
 
   return (
-    <div>
-      {/* loop through steps */}
-      {steps.map((label, index) => (
-        /* display block for current step, none for rest */
-        <div
-          key={label}
-          style={
-            index === activeStep ? { display: "block" } : { display: "none" }
-          }
-          /* set vw & vh to 100 */
-          className="experience-container"
-        >
-          {/* show step content */}
-          <div key={label}>{getStepContent(index)}</div>
-        </div>
-      ))}
-    </div>
+    <div className="experience-container">{getStepContent(activeStep)}</div>
   );
+
+  // OLD LOOPING STEPPER
+  // return (
+  //   <div>
+  //     {/* loop through steps */}
+  //     {steps.map((label, index) => (
+  //       /* display block for current step, none for rest */
+  //       <div
+  //         key={label}
+  //         style={
+  //           index === activeStep ? { display: "block" } : { display: "none" }
+  //         }
+  //         /* set vw & vh to 100 */
+  //         className="experience-container"
+  //       >
+  //         {/* show step content */}
+  //         <div key={label}>{getStepContent(index)}</div>
+  //       </div>
+  //     ))}
+  //   </div>
+  // );
 };
 
 export default Experience;

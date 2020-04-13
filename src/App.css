@@ -1,37 +1,51 @@
-/* new */
-.full-width-bg {
-  width: 100vw;
-  height: 100vh;
+/*  */
+.dot-wrapper {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
 }
 
-/* full width img bg */
-img.bg {
-  /* Set rules to fill background */
-  min-height: 100%;
-  min-width: 1024px;
-
-  /* Set up proportionate scaling */
-  width: 100%;
-  height: auto;
-
-  /* Set up positioning */
-  position: fixed;
-  top: 0;
-  left: 0;
+/* For typewriter effect */
+.typewriter h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  /* margin: 0 auto; */ /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 3.5s steps(50, end), blink-caret 0.75s step-end infinite;
 }
 
-@media screen and (max-width: 1024px) {
-  /* Specific to this particular image */
-  img.bg {
-    left: 50%;
-    margin-left: -512px; /* 50% */
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
   }
 }
 
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+/* For transition clips */
 .show-challenge {
   width: 100vw;
   height: 100vh;
   background-color: #222;
+}
+
+/* experience */
+.experience-container {
+  position: relative;
 }
 
 .experience-container img {
@@ -39,16 +53,36 @@ img.bg {
   height: 100vh;
 }
 
+.experience-container video {
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+
+/* helpers */
+.full-size {
+  width: 100vw;
+  height: 100vh;
+}
+
+.absolute {
+  position: absolute;
+}
+
+/* For centering */
+/* Outer div */
 .center-div {
   position: absolute;
   top: 50%;
   left: 50%;
 }
 
+/* inner */
 .center-div .content {
   position: relative;
   left: -50%;
 }
+/* Centering over */
 
 .absolute {
   position: absolute;
@@ -79,6 +113,15 @@ img.bg {
   left: 10%;
 }
 
+.center-placement {
+  position: absolute;
+  top: 45vh;
+  left: 45%;
+  background-color: black;
+  border-radius: 25px;
+  padding: 30px;
+}
+
 .button-placement-label {
   /* position relative to its ancestor (the circle) */
   position: absolute;
@@ -93,51 +136,33 @@ img.bg {
   border-radius: 5px;
 }
 
-.experience-container {
-  position: relative;
-}
-
 .label-title {
   position: absolute;
   background-color: white;
 }
 
-/* old */
-.App {
-  text-align: center;
+/* OLD */
+
+/* full width img bg */
+img.bg {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media screen and (max-width: 1024px) {
+  /* Specific to this particular image */
+  img.bg {
+    left: 50%;
+    margin-left: -512px; /* 50% */
   }
 }

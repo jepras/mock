@@ -6,7 +6,7 @@ const End = () => {
 
   return (
     <div>
-      <p>End</p>
+      <p>The end - thanks for your participation</p>
       <p>{user.name}</p>
     </div>
   );

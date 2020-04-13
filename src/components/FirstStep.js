@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import movie from "../assets/media/movie.mp4";
 
-const FirstStep = props => {
+const FirstStep = (props) => {
   const { handleNext } = props;
 
   console.log("props", props);
@@ -15,28 +15,32 @@ const FirstStep = props => {
     return () => clearTimeout(timer);
   }, []);
 
-  return (
-    <div>
-      <div className="button-placement step-one"></div>
-      <div id="show" className="show-challenge" style={{ display: "none" }}>
-        <div className="center-div">
-          <div className="content">
-            Do you accept the challenge?
-            <button className="button" color="primary" onClick={handleNext}>
-              Yes
-            </button>
-            <button
-              className="button"
-              color="primary"
-              disabled={true}
-              onClick={handleNext}
-            >
-              No
-            </button>
-          </div>
+  const Transition = <video id="hide" controls src={movie} />;
+  const Scene = (
+    <div id="show" className="show-challenge" style={{ display: "none" }}>
+      <div className="center-div">
+        <div className="content">
+          Do you accept the challenge?
+          <button className="button" color="primary" onClick={handleNext}>
+            Yes
+          </button>
+          <button
+            className="button"
+            color="primary"
+            disabled={true}
+            onClick={handleNext}
+          >
+            No
+          </button>
         </div>
       </div>
-      <video id="hide" controls src={movie} />
+    </div>
+  );
+
+  return (
+    <div>
+      <Scene />
+      <Transition />
     </div>
   );
 };

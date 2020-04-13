@@ -5,9 +5,11 @@ export const FormContext = createContext();
 const FormContextProvider = (props) => {
   const [user, setUser] = useState({
     name: "",
+    input: "",
     color: "blue",
     order: { first: "", second: "" },
   });
+
   const [location, setLocation] = useState({
     location1: [{ name: "unknown", location: { lat: 10, lng: 20 } }],
     location2: [{ name: "unknown", location: { lat: 10, lng: 20 } }],
@@ -18,6 +20,11 @@ const FormContextProvider = (props) => {
     setUser({ ...user, name });
   };
 
+  const addInput = (input) => {
+    setUser({ ...user, input });
+  };
+
+  /* replacing location info */
   const addLocation = (newLocation) => {
     if (location.location1[0].name === "unknown") {
       console.log("deleting and adding new ");
@@ -38,6 +45,8 @@ const FormContextProvider = (props) => {
         user,
         addLocation,
         location,
+        addInput,
+        setUser,
       }}
     >
       {props.children}

@@ -1,18 +1,18 @@
-import React, { useContext, useEffect } from "react";
-import { StepContext } from "../contexts/StepContext";
+import React, { useContext, useEffect } from 'react';
+import { StepContext } from '../contexts/StepContext';
 /* import audioNews from "../assets/media/aud/audio-news.wav"; */
-import linesFloating from "../assets/media/vid/lines-floating.mp4";
+import linesFloating from '../assets/media/vid/lines-floating.mp4';
 
-import Dot from "../components/Dot";
-import InputForm from "../components/InputForm";
+import Dot from '../components/Dot';
+import InputForm from '../components/InputForm';
 
 const Intro = () => {
   const { handleNext } = useContext(StepContext);
 
   useEffect(() => {
-    console.log("Intro rendered");
+    console.log('Intro rendered');
     return () => {
-      console.log("component cleaned up");
+      console.log('component cleaned up');
     };
   }, []);
 
@@ -24,10 +24,10 @@ const Intro = () => {
     return (
       <>
         <div onClick={handleNext}>
-          <Dot top="30vh" left="70%" />
+          <Dot top='30vh' left='70%' />
         </div>
 
-        <div className="center-placement">
+        <div className='center-placement'>
           <InputForm />
         </div>
       </>
@@ -35,13 +35,13 @@ const Intro = () => {
   };
 
   const Audio = () => {
-    return null;
+    /* return null;
     {
-      /* <audio controls autoPlay src={audioNews} style={{ display: "none" }}>
+      <audio controls autoPlay src={audioNews} style={{ display: "none" }}>
 Your browser does not support the
 <code>audio</code> element.
-</audio> */
-    }
+</audio>
+    } */
   };
 
   return (

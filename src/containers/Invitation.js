@@ -1,12 +1,11 @@
 import React, { useContext, useState } from "react";
 import { StepContext } from "../contexts/StepContext";
-import NameForm from "../components/NameForm";
 
-import tvnoise from "../assets/media/vid/tvnoise.mp4";
+import { Video } from "cloudinary-react";
+
 import newsspeak from "../assets/media/aud/newsspeak.wav";
 import audionews from "../assets/media/aud/audionews.wav";
 import downloadcomplete from "../assets/media/aud/downloadcomplete.wav";
-import ink1 from "../assets/media/vid/ink1.mp4";
 
 const Invitation = () => {
   const [playVideo, setPlayVideo] = useState(null);
@@ -20,7 +19,13 @@ const Invitation = () => {
   const Transition = () => {
     return (
       <>
-        <video src={tvnoise} autoplay="true" onEnded={() => handleNext()} />
+        <Video
+          cloudName="jepras"
+          publicId="tvnoise"
+          poster="false"
+          onEnded={() => handleNext()}
+          autoPlay
+        />
         <audio
           controls
           autoPlay
@@ -37,7 +42,9 @@ const Invitation = () => {
   };
 
   const Background = () => {
-    return <video src={ink1} autoPlay loop />;
+    return (
+      <Video cloudName="jepras" publicId="ink1" poster="false" autoPlay loop />
+    );
   };
 
   const Content = () => {

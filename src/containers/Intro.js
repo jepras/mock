@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from "react";
 import { StepContext } from "../contexts/StepContext";
-import opening from "../assets/media/vid/opening.mp4";
+
+import { Video } from "cloudinary-react";
 
 import Dot from "../components/Dot";
-import InputForm from "../components/InputForm";
 
 const Intro = () => {
   const { handleNext } = useContext(StepContext);
@@ -16,7 +16,17 @@ const Intro = () => {
   }, []);
 
   const Background = () => {
-    return <video src={opening} loop autoPlay />;
+    return (
+      <>
+        <Video
+          cloudName="jepras"
+          publicId="opening"
+          poster="false"
+          loop
+          autoPlay
+        />
+      </>
+    );
   };
 
   const Overlay = () => {

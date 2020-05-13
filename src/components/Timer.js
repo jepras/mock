@@ -35,7 +35,7 @@ export default function App() {
   const daysDuration = days * daySeconds;
 
   return (
-    <div className='App'>
+    <div className='timer-app'>
       <CountdownCircleTimer
         {...timerProps}
         colors={[['#7E2E84']]}

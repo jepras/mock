@@ -25,6 +25,7 @@ const Invitation = () => {
           poster="false"
           onEnded={() => handleNext()}
           autoPlay
+          style={{ width: "100%" }}
         />
         <audio
           controls
@@ -89,7 +90,7 @@ const Invitation = () => {
   };
 
   return (
-    <>
+    <div className="experience-container">
       {playVideo === true ? (
         <Transition />
       ) : (
@@ -100,7 +101,7 @@ const Invitation = () => {
           {playSecondAudio === true ? <Audio2 /> : <Audio />}
         </>
       )}
-    </>
+    </div>
   );
 };
 

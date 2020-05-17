@@ -1,3 +1,18 @@
+.fade1 {
+  animation-duration: 10s;
+  animation-name: brightenup;
+}
+
+@keyframes brightenup {
+  from {
+    filter: brightness(0%)
+  }
+
+  to {
+    filter: brightness(100%)
+  }
+}
+
 /*  */
 .dot-wrapper {
   position: relative;
@@ -55,9 +70,9 @@
 
 .experience-container video {
   /* width: 100vw; */
-  height: 100vh;
+  /* height: 100vh; */
   z-index: 0;
-  max-width: none !important;
+  /* max-width: none !important; */
 }
 
 /* helpers */

@@ -16,8 +16,8 @@
   height: 25px;
   width: 25px;
   position: absolute;
-  top: -9px;
-  left: -9px;
+  top: -8px;
+  left: -8px;
 
   animation: pulsate 1s ease-out infinite;
   opacity: 0;

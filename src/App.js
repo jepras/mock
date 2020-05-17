@@ -15,7 +15,7 @@ import MapTest from './components/MapTest';
 
 /* css */
 import './App.css';
-import './App.sass';
+/* import './App.sass'; */
 
 /* context */
 import FormContextProvider from './contexts/FormContext';
@@ -24,22 +24,22 @@ import StepContextProvider from './contexts/StepContext';
 class App extends React.Component {
   render() {
     return (
-      <div className='App'>
+      <div className="App">
         <FormContextProvider>
           <StepContextProvider>
             <Switch>
               {/* real */}
-              <Route exact path='/' component={Landing} />
-              <Route exact path='/start' component={Start} />
+              <Route exact path="/" component={Landing} />
+              <Route exact path="/start" component={Start} />
 
-              <Route exact path='/experience' component={Experience} />
+              <Route exact path="/experience" component={Experience} />
 
-              <Route exact path='/visionary' component={Visionary} />
-              <Route exact path='/architect' component={Architect} />
-              <Route exact path='/end' component={End} />
+              <Route exact path="/visionary" component={Visionary} />
+              <Route exact path="/architect" component={Architect} />
+              <Route exact path="/end" component={End} />
 
               {/* test */}
-              <Route path='/maptest' component={MapTest} />
+              <Route path="/maptest" component={MapTest} />
               {/* <Route path="/test" component={Test} /> */}
             </Switch>{' '}
           </StepContextProvider>

@@ -1,11 +1,13 @@
-import React, { useContext, useState } from "react";
-import { StepContext } from "../contexts/StepContext";
+import React, { useContext, useState } from 'react';
+import { StepContext } from '../contexts/StepContext';
+import { Link } from 'react-router-dom';
+import Dot from '../components/Dot';
 
-import { Video } from "cloudinary-react";
+import { Video } from 'cloudinary-react';
 
-import newsspeak from "../assets/media/aud/newsspeak.wav";
-import audionews from "../assets/media/aud/audionews.wav";
-import downloadcomplete from "../assets/media/aud/downloadcomplete.wav";
+import newsspeak from '../assets/media/aud/newsspeak.wav';
+import audionews from '../assets/media/aud/audionews.wav';
+import downloadcomplete from '../assets/media/aud/downloadcomplete.wav';
 
 const Invitation = () => {
   const [playVideo, setPlayVideo] = useState(null);
@@ -25,19 +27,18 @@ const Invitation = () => {
           poster="false"
           onEnded={() => handleNext()}
           autoPlay
-          style={{ width: "100%" }}
+          style={{ width: '100vw !important' }}
         />
         <audio
           controls
           autoPlay
           src={downloadcomplete}
-          style={{ display: "none" }}
+          style={{ display: 'none' }}
           onEnded={() => handleNext()}
         >
           Your browser does not support the
           <code>audio</code> element.
         </audio>
-        ); };
       </>
     );
   };
@@ -50,10 +51,8 @@ const Invitation = () => {
 
   const Content = () => {
     return (
-      <div className="step-one">
-        <button className="button" color="primary" onClick={acceptChallenge}>
-          Next
-        </button>
+      <div onClick={acceptChallenge}>
+        <Dot top="50vh" left="50%" />
       </div>
     );
   };
@@ -65,7 +64,7 @@ const Invitation = () => {
         autoPlay
         src={audionews}
         loop={false}
-        style={{ display: "none" }}
+        style={{ display: 'none' }}
         onEnded={() => setPlaySecondAudio(true)}
       >
         Your browser does not support the
@@ -80,7 +79,7 @@ const Invitation = () => {
         controls
         autoPlay
         src={newsspeak}
-        style={{ display: "none" }}
+        style={{ display: 'none' }}
         onEnded={() => handleNext()}
       >
         Your browser does not support the

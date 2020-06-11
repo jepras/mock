@@ -19,9 +19,12 @@ const Start = () => {
         >
           <div className="typewriter">
             <h1 className="has-text-black">
-              put on your headphones and enter full screen
+              Put on your headphones and enter full screen.
             </h1>
           </div>
+          <h1 className="has-text-black">
+            The experience should be done on a computer.
+          </h1>
         </div>
       </div>
     </div>

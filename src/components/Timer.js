@@ -14,8 +14,8 @@ const timerProps = {
 
 const renderTime = (dimension, time) => {
   return (
-    <div className='time-wrapper'>
-      <div className='time'>{time}</div>
+    <div className="time-wrapper">
+      <div className="time">{time}</div>
       <div>{dimension}</div>
     </div>
   );
@@ -27,15 +27,15 @@ const getTimeHours = (time) => ((time % daySeconds) / hourSeconds) | 0;
 const getTimeDays = (time) => (time / daySeconds) | 0;
 
 export default function App() {
-  const stratTime = Date.now(); // use UNIX timestamp in seconds
-  const endTime = stratTime + 2043248; // use UNIX timestamp in seconds
+  const stratTime = 1591900171249; // use UNIX timestamp in seconds
+  const endTime = stratTime + 3600 * 24 * 9; // use UNIX timestamp in seconds
 
   const remainingTime = endTime - stratTime;
   const days = Math.ceil(remainingTime / daySeconds);
   const daysDuration = days * daySeconds;
 
   return (
-    <div className='timer-app'>
+    <div className="timer-app">
       <CountdownCircleTimer
         {...timerProps}
         colors={[['#7E2E84']]}

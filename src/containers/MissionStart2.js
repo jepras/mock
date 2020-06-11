@@ -1,42 +1,80 @@
-import React, { useContext, useState } from "react";
-import { StepContext } from "../contexts/StepContext";
-import MapForm from "../components/MapForm";
-import earthzoom from "../assets/media/vid/earthzoom.mp4";
+import React, { useContext, useState } from 'react';
+import { StepContext } from '../contexts/StepContext';
+import { Video } from 'cloudinary-react';
+
+import jen4 from '../assets/media/aud/jen4.wav';
 
 const MissionStart2 = () => {
   const [playVideo, setPlayVideo] = useState(null);
   const { handleNext } = useContext(StepContext);
 
-  const acceptChallenge = () => {
+  /* const acceptChallenge = () => {
     setPlayVideo(true);
-  };
+  }; */
 
   const Transition = () => {
     return (
-      <video src={earthzoom} autoplay="true" onEnded={() => handleNext()} />
+      <div className="fullscreen-bg">
+        <Video
+          cloudName="jepras"
+          publicId="earthzoom-reverse"
+          className="fullscreen-bg__video"
+          poster="false"
+          autoPlay
+          onEnded={() => handleNext()}
+        />
+      </div>
+    );
+  };
+
+  const Background = () => {
+    return (
+      <div className="fullscreen-bg">
+        <Video
+          cloudName="jepras"
+          publicId="breeze-fade"
+          className="fullscreen-bg__video"
+          poster="false"
+          autoPlay
+          onEnded={() => setPlayVideo(true)}
+          muted
+        />
+      </div>
     );
   };
 
   const Content = () => {
+    return <></>;
+  };
+
+  const Audio = () => {
     return (
-      <>
-        <p>
-          At what place have you been the happiest? (press submit before
-          clicking next)
-        </p>
-        <MapForm />
-        {/* <p>What place have had the biggest impact on your life?</p>
-        <MapForm />
-        <p>Where have you been impacted emotionally the most?</p>
-        <MapForm /> */}
-        <button className="button" color="primary" onClick={acceptChallenge}>
-          Next
-        </button>
-      </>
+      <audio
+        controls
+        autoPlay
+        src={jen4}
+        loop={false}
+        style={{ display: 'none' }}
+      >
+        Your browser does not support the
+        <code>audio</code> element.
+      </audio>
     );
   };
 
-  return <>{playVideo === true ? <Transition /> : <Content />}</>;
+  return (
+    <>
+      {playVideo === true ? (
+        <Transition />
+      ) : (
+        <>
+          <Background />
+          <Content />
+          <Audio />
+        </>
+      )}
+    </>
+  );
 };
 
 export default MissionStart2;

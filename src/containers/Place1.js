@@ -1,44 +1,46 @@
-import React, { useContext, useState } from "react";
-import GoogleMapReact from "google-map-react";
+import React, { useContext, useState } from 'react';
+import GoogleMapReact from 'google-map-react';
 
-import { StepContext } from "../contexts/StepContext";
-import { FormContext } from "../contexts/FormContext";
+import { StepContext } from '../contexts/StepContext';
+import { FormContext } from '../contexts/FormContext';
 
-import getMapOptions from "../assets/getMapOptions";
+import getMapOptions from '../assets/getMapOptions';
+import MapForm from '../components/MapForm';
 
+/* the world */
 const Place1 = (props) => {
   const { handleNext, activeStep } = useContext(StepContext);
   const { location } = useContext(FormContext);
-  console.log("location & active step", location, activeStep);
+  console.log('location & active step', location, activeStep);
 
   if (activeStep === 2) {
-    console.log("hey!", activeStep);
-    console.log("props", props);
+    console.log('hey!', activeStep);
+    console.log('props', props);
   }
 
   const [defaultMap] = useState({
-    zoom: 18,
+    zoom: 1,
   });
 
   const mapComponent = (
     <GoogleMapReact
       bootstrapURLKeys={{
-        key: "AIzaSyB8vzZ5vZR9M3jvHpViVL2KLDKE64ezOHE",
+        key: 'AIzaSyB8vzZ5vZR9M3jvHpViVL2KLDKE64ezOHE',
       }}
-      center={location.location1[0].location}
+      center={{ lat: 10, lng: 20 }}
       zoom={defaultMap.zoom}
       options={getMapOptions}
     ></GoogleMapReact>
   );
 
   return (
-    <div style={{ height: "100vh", width: "100%" }}>
+    <div style={{ height: '100vh', width: '100%' }}>
       {mapComponent}
-      <div className="button-placement step-one">
-        <p>Place1</p>
-        <button className="button" color="primary" onClick={handleNext}>
-          Next
-        </button>
+      <div className="center-div-mission" style={{ top: '70%' }}>
+        <div className="absolute mission-overlay content">
+          Where is your current place of residence? Or Where is home?
+          <MapForm />
+        </div>
       </div>
     </div>
   );

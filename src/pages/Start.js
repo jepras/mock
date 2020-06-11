@@ -9,7 +9,7 @@ const Start = () => {
       style={{ backgroundColor: '#c0c0c0' }}
     >
       <Link to="experience">
-        <Dot top="50vh" left="50%" />
+        <Dot top="40vh" left="50%" />
       </Link>
 
       <div className="center-div" style={{ marginTop: '40%' }}>

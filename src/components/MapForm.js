@@ -1,14 +1,20 @@
-import React, { useContext, useState } from "react";
-import { FormContext } from "../contexts/FormContext";
+import React, { useContext, useState } from 'react';
+import { FormContext } from '../contexts/FormContext';
+import { StepContext } from '../contexts/StepContext';
+import './InputForm.css';
 
 const MapForm = () => {
   const { addLocation } = useContext(FormContext);
-  const [value, setValue] = useState("");
+  const { handleNext } = useContext(StepContext);
+  const [value, setValue] = useState('');
+  const [clicked, setClicked] = useState(null);
 
   const handleSubmit = (event) => {
-    console.log("A name was submitted: " + value);
+    console.log('A name was submitted: ' + value);
     event.preventDefault();
     fetchGeo();
+    setClicked(true);
+    handleNext();
   };
 
   const fetchGeo = () => {
@@ -21,21 +27,28 @@ const MapForm = () => {
           name: value,
           location: data.results[0].geometry.location,
         };
-        console.log("newlocation", newLocation);
+        console.log('newlocation', newLocation);
         addLocation(newLocation);
       });
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
+      <div className="cursor">
         <input
+          autoFocus
           type="text"
           value={value}
           onChange={(event) => setValue(event.target.value)}
+          className="input-styling"
         />
-      </label>
-      <input type="submit" value="Submit" />
+      </div>
+
+      <div className="box-3">
+        <div className="btn btn-three">
+          {clicked ? <span>Submitted</span> : <span>Enter</span>}
+        </div>
+      </div>
     </form>
   );
 };

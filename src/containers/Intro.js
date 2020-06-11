@@ -1,31 +1,43 @@
-import React, { useContext, useEffect } from "react";
-import { StepContext } from "../contexts/StepContext";
+import React, { useContext, useEffect } from 'react';
+import { Video, Transformation } from 'cloudinary-react';
 
-import { Video } from "cloudinary-react";
+/* imports */
+import { StepContext } from '../contexts/StepContext';
+import Dot from '../components/Dot';
 
-import Dot from "../components/Dot";
+/* media */
+import clock from '../assets/media/aud/clock.wav';
 
 const Intro = () => {
   const { handleNext } = useContext(StepContext);
 
   useEffect(() => {
-    console.log("Intro rendered");
+    console.log('Intro rendered');
     return () => {
-      console.log("component cleaned up");
+      console.log('component cleaned up');
     };
   }, []);
 
   const Background = () => {
     return (
-      <>
-        <Video
+      <div className="fullscreen-bg">
+        {/* <Video
           cloudName="jepras"
           publicId="opening"
-          poster="false"
-          loop
+          poster="true"
+          className="fullscreen-bg__video"
           autoPlay
+          preload="true"
+        /> */}
+        <video
+          className="fullscreen-bg__video"
+          autoPlay
+          preload="true"
+          poster="true"
+          src="http://res.cloudinary.com/jepras/video/upload/opening.mp4"
+          type="video/mp4"
         />
-      </>
+      </div>
     );
   };
 
@@ -33,13 +45,13 @@ const Intro = () => {
     return (
       <>
         <div onClick={handleNext}>
-          <Dot top="70vh" left="50%" />
+          <Dot top="90vh" left="50%" />
         </div>
 
-        <div className="center-div" style={{ marginTop: "20%" }}>
+        <div className="center-div" style={{ top: '50px' }}>
           <div
             className="content"
-            style={{ position: "relative", width: "100%" }}
+            style={{ position: 'relative', width: '100%' }}
           >
             <p>
               You will be taken to the future, on a mission that nobody else can
@@ -51,10 +63,26 @@ const Intro = () => {
     );
   };
 
+  const Audio = () => {
+    return (
+      <audio
+        controls
+        autoPlay
+        src={clock}
+        loop={false}
+        style={{ display: 'none' }}
+      >
+        Your browser does not support the
+        <code>audio</code> element.
+      </audio>
+    );
+  };
+
   return (
     <>
       <Background />
       <Overlay />
+      <Audio />
     </>
   );
 };

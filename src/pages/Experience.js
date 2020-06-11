@@ -1,18 +1,20 @@
-import React, { useContext } from "react";
-import { StepContext } from "../contexts/StepContext";
+import React, { useContext } from 'react';
+import { StepContext } from '../contexts/StepContext';
 
 /* import steps */
-import Intro from "../containers/Intro";
-import Invitation from "../containers/Invitation";
-import MissionStart1 from "../containers/MissionStart1";
-import MissionStart2 from "../containers/MissionStart2";
-import Place1 from "../containers/Place1";
-import Place2 from "../containers/Place2";
-import Place3 from "../containers/Place3";
-import End from "../containers/End";
+import Intro from '../containers/Intro';
+import Invitation from '../containers/Invitation';
+import MissionStart1 from '../containers/MissionStart1';
+import MissionStart2 from '../containers/MissionStart2';
+import Place1 from '../containers/Place1';
+import Place2 from '../containers/Place2';
+import Place3 from '../containers/Place3';
+import Place4 from '../containers/Place4';
+import End from '../containers/End';
 
 const Experience = () => {
   const { activeStep } = useContext(StepContext);
+  console.log('current step: ', activeStep);
 
   function getStepContent(step) {
     switch (step) {
@@ -31,14 +33,22 @@ const Experience = () => {
       case 6:
         return <Place3 />;
       case 7:
-        return <End />;
+        return <Place4 />;
       default:
-        return "Unknown step";
+        return 'Unknown step';
     }
   }
 
   return (
-    <div className="experience-container">{getStepContent(activeStep)}</div>
+    <div className="experience-container">
+      {getStepContent(activeStep)}
+      {/* <div className="user-context">
+        <p>form context</p>
+        {JSON.stringify(user)}
+        <p>location</p>
+        {JSON.stringify(location)}
+      </div> */}
+    </div>
   );
 
   // OLD LOOPING STEPPER

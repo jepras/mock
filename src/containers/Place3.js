@@ -1,14 +1,59 @@
-import React, { useContext, useState } from "react";
-import GoogleMapReact from "google-map-react";
+import React, { useContext, useState } from 'react';
+import GoogleMapReact from 'google-map-react';
 
-import { StepContext } from "../contexts/StepContext";
-import { FormContext } from "../contexts/FormContext";
+import { StepContext } from '../contexts/StepContext';
+import { FormContext } from '../contexts/FormContext';
 
-import getMapOptions from "../assets/getMapOptions";
+import getMapOptions from '../assets/getMapOptions';
+import MapForm from '../components/MapForm';
 
+import InputForm from '../components/InputForm';
+import SelectForm from '../components/SelectForm';
+
+/* second */
 const Place3 = () => {
-  const { handleNext } = useContext(StepContext);
   const { location } = useContext(FormContext);
+  const { handleNext, activePlaceStep, handleNextPlaceStep } = useContext(
+    StepContext
+  );
+
+  function getPlaceStepContent(step) {
+    switch (step) {
+      case 0:
+        return (
+          <div className="center-div-mission" style={{ top: '70%' }}>
+            <div className="absolute mission-overlay content">
+              Who are you with?
+              <InputForm childInput="with" phase="place" />
+            </div>
+          </div>
+        );
+
+      case 1:
+        return (
+          <div className="center-div-mission" style={{ top: '70%' }}>
+            <div className="absolute mission-overlay content">
+              What feeling do you attribute to this place?
+              <SelectForm childInput="attribute" phase="place" />
+            </div>
+          </div>
+        );
+
+      case 2:
+        return (
+          <div className="center-div-mission" style={{ top: '70%' }}>
+            <div className="absolute mission-overlay content">
+              Where did you last feel you shared common interest & beliefs with
+              people around you?
+              <MapForm childInput="shared" phase="place" />
+            </div>
+          </div>
+        );
+
+      default:
+        return;
+    }
+  }
 
   const [defaultMap] = useState({
     zoom: 18,
@@ -17,23 +62,18 @@ const Place3 = () => {
   const mapComponent = (
     <GoogleMapReact
       bootstrapURLKeys={{
-        key: "AIzaSyB8vzZ5vZR9M3jvHpViVL2KLDKE64ezOHE",
+        key: 'AIzaSyB8vzZ5vZR9M3jvHpViVL2KLDKE64ezOHE',
       }}
-      center={location.location3[0].location}
+      center={location.location2[0].location}
       zoom={defaultMap.zoom}
       options={getMapOptions}
     ></GoogleMapReact>
   );
 
   return (
-    <div style={{ height: "100vh", width: "100%" }}>
+    <div style={{ height: '100vh', width: '100%' }}>
       {mapComponent}
-      <div className="button-placement step-one">
-        <p>Place1</p>
-        <button className="button" color="primary" onClick={handleNext}>
-          Next
-        </button>
-      </div>
+      {getPlaceStepContent(activePlaceStep)}
     </div>
   );
 };

@@ -10,8 +10,8 @@ import Architect from './pages/Architect';
 import End from './pages/End';
 
 /* test */
-import MapTest from './components/MapTest';
-/* import Test from "./components/Test"; */
+/* import MapTest from './components/MapTest'; */
+import Test from './components/Test';
 
 /* css */
 import './App.css';
@@ -39,8 +39,8 @@ class App extends React.Component {
               <Route exact path="/end" component={End} />
 
               {/* test */}
-              <Route path="/maptest" component={MapTest} />
-              {/* <Route path="/test" component={Test} /> */}
+              {/*               <Route path="/maptest" component={MapTest} />*/}
+              <Route path="/test" component={Test} />
             </Switch>{' '}
           </StepContextProvider>
         </FormContextProvider>

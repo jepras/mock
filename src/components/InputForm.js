@@ -1,27 +1,42 @@
-import React, { useContext, useState } from "react";
-import { FormContext } from "../contexts/FormContext";
-import "./InputForm.css";
+import React, { useContext, useState } from 'react';
+import { FormContext } from '../contexts/FormContext';
+import { StepContext } from '../contexts/StepContext';
+import './InputForm.css';
 
-const InputForm = () => {
+const InputForm = (props) => {
   const { addInput } = useContext(FormContext);
-  const [value, setValue] = useState("");
+  const { handleNextMissionStep, handleNextPlaceStep, handleNext } = useContext(
+    StepContext
+  );
+  const [value, setValue] = useState('');
   const [clicked, setClicked] = useState(null);
-
-  let audio = new Audio("../keystroke.mp3");
+  console.log('childinput: ', props.childInput);
 
   const handleSubmit = (event) => {
+    console.log(props);
     event.preventDefault();
-    addInput(value);
+    addInput(value, props.childInput);
     setClicked(true);
+
+    console.log('phase: ', props.phase);
+    if (props.phase === 'place') {
+      console.log('phase == phase:', props.phase);
+      handleNextPlaceStep();
+    } else {
+      handleNextMissionStep();
+    }
+
+    if (props.childInput === 'shared') {
+      handleNext();
+    }
   };
 
   const onChange = (event) => {
     setValue(event.target.value);
-    audio.play();
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="cursor">
         <input
           autoFocus
@@ -30,11 +45,10 @@ const InputForm = () => {
           onChange={onChange}
           className="input-styling"
         />
-        <i></i>
       </div>
-      <div class="box-3">
-        <div class="btn btn-three" onClick={handleSubmit}>
-          {clicked ? <span>Check</span> : <span>Enter</span>}
+      <div className="box-3">
+        <div className="btn btn-three" onClick={handleSubmit}>
+          {clicked ? <span>Submitted</span> : <span>Enter</span>}
         </div>
       </div>
     </form>

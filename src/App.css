@@ -1,15 +1,76 @@
-.fade1 {
-  animation-duration: 50s;
-  animation-name: brightenup;
+.mission-overlay {
+  color: #ffffff;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
 }
 
-@keyframes brightenup {
+.user-context {
+  left: 65%;
+  top: 60%;
+  max-width: 30%;
+  position: absolute;
+  z-index: 1;
+  background-color: #ffff;
+}
+
+.fade1 {
+  animation: 5s brightenup1;
+  filter: brightness(25%);
+}
+
+@keyframes brightenup1 {
   from {
-    filter: brightness(0%)
+    filter: brightness(0%);
   }
 
   to {
-    filter: brightness(100%)
+    filter: brightness(25%);
+  }
+}
+
+.fade2 {
+  animation: 5s brightenup2;
+  filter: brightness(50%);
+}
+
+@keyframes brightenup2 {
+  from {
+    filter: brightness(25%);
+  }
+
+  to {
+    filter: brightness(50%);
+  }
+}
+
+.fade3 {
+  animation: 5s brightenup3;
+  filter: brightness(75%);
+}
+
+@keyframes brightenup3 {
+  from {
+    filter: brightness(50%);
+  }
+
+  to {
+    filter: brightness(75%);
+  }
+}
+
+.fade4 {
+  animation: 5s brightenup4;
+  filter: brightness(100%);
+}
+
+@keyframes brightenup4 {
+  from {
+    filter: brightness(75%);
+  }
+
+  to {
+    filter: brightness(100%);
   }
 }
 
@@ -68,11 +129,53 @@
   height: 100vh;
 }
 
-.experience-container video {
-  /* width: 100vw; */
-  /* height: 100vh; */
+/* .experience-container video {
+  width: 100vw;
+  height: 100vh;
   z-index: 0;
-  /* max-width: none !important; */
+} */
+
+/* background css */
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.fullscreen-bg__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: 300%;
+    left: -100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .fullscreen-bg {
+    background: center center / cover no-repeat;
+  }
+
+  .fullscreen-bg__video {
+    display: none;
+  }
 }
 
 /* helpers */
@@ -95,6 +198,18 @@
 
 /* inner */
 .center-div .content {
+  position: relative;
+  left: -50%;
+}
+
+.center-div-mission {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+/* inner */
+.center-div-mission .content {
   position: relative;
   left: -50%;
 }

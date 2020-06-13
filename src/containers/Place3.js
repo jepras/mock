@@ -13,9 +13,7 @@ import SelectForm from '../components/SelectForm';
 /* second */
 const Place3 = () => {
   const { location } = useContext(FormContext);
-  const { handleNext, activePlaceStep, handleNextPlaceStep } = useContext(
-    StepContext
-  );
+  const { activePlaceStep } = useContext(StepContext);
 
   function getPlaceStepContent(step) {
     switch (step) {

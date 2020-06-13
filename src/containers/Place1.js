@@ -9,7 +9,7 @@ import MapForm from '../components/MapForm';
 
 /* the world */
 const Place1 = (props) => {
-  const { handleNext, activeStep } = useContext(StepContext);
+  const { activeStep } = useContext(StepContext);
   const { location } = useContext(FormContext);
   console.log('location & active step', location, activeStep);
 

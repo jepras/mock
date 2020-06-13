@@ -1,14 +1,12 @@
 import React, { useContext, useState } from 'react';
 import GoogleMapReact from 'google-map-react';
 
-import { StepContext } from '../contexts/StepContext';
 import { FormContext } from '../contexts/FormContext';
 
 import getMapOptions from '../assets/getMapOptions';
 import MapForm from '../components/MapForm';
 
 const Place2 = () => {
-  const { handleNext } = useContext(StepContext);
   const { location } = useContext(FormContext);
 
   const [defaultMap] = useState({

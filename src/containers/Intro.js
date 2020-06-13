@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from 'react';
-import { Video, Transformation } from 'cloudinary-react';
 
 /* imports */
 import { StepContext } from '../contexts/StepContext';

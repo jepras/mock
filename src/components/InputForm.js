@@ -28,6 +28,8 @@ const InputForm = (props) => {
 
     if (props.childInput === 'shared') {
       handleNext();
+    } else if (props.childInput === 'people') {
+      handleNext();
     }
   };
 

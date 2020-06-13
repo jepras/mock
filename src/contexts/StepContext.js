@@ -21,20 +21,7 @@ const StepContextProvider = (props) => {
   };
 
   function getSteps() {
-    return [
-      'First page',
-      'Second page',
-      'Third page',
-      'Fourth page',
-      'Fifth page',
-      '6',
-      '7',
-      '8',
-      '9',
-      '10',
-      '11',
-      '12',
-    ];
+    return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
   }
 
   return (
@@ -44,6 +31,7 @@ const StepContextProvider = (props) => {
         activeStep,
         activePlaceStep,
         activeMissionStep,
+
         handleNext,
         handleNextMissionStep,
         handleNextPlaceStep,

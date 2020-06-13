@@ -10,7 +10,7 @@ import Place1 from '../containers/Place1';
 import Place2 from '../containers/Place2';
 import Place3 from '../containers/Place3';
 import Place4 from '../containers/Place4';
-import End from '../containers/End';
+import Clouds1 from '../containers/Clouds1';
 
 const Experience = () => {
   const { activeStep } = useContext(StepContext);
@@ -34,6 +34,9 @@ const Experience = () => {
         return <Place3 />;
       case 7:
         return <Place4 />;
+      case 8:
+        return <Clouds1 />;
+
       default:
         return 'Unknown step';
     }

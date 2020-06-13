@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import { StepContext } from '../contexts/StepContext';
 
 import { Video } from 'cloudinary-react';
-import Dot from '../components/Dot';
 
 import noise from '../assets/media/aud/noise.wav';
 import deepbreath from '../assets/media/aud/deepbreath.wav';

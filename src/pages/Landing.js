@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Dot from '../components/Dot';
-import Timer from '../components/Timer';
+import Timer2 from '../components/Timer2';
 
 const Landing = () => {
   return (
@@ -21,9 +21,10 @@ const Landing = () => {
             <Link to="start" className="secret-link">
               .
             </Link>
+            <br />
+            <br />
+            <Timer2 />
           </h1>
-
-          <Timer />
         </div>
       </div>
     </div>

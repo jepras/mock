@@ -1,3 +1,7 @@
+.secret-link {
+  text-decoration: none;
+}
+
 .mission-overlay {
   color: #ffffff;
   padding: 10px;

@@ -7,7 +7,7 @@ import ArchitectContent from '../containers/ArchitectContent';
 import ArchitectContextProvider from '../contexts/ArchitectContext';
 
 const Architect = () => {
-  const [playVideo, setPlayVideo] = useState(true);
+  const [playVideo, setPlayVideo] = useState(false);
 
   const Transition = () => {
     return (
@@ -18,7 +18,7 @@ const Architect = () => {
           className="fullscreen-bg__video"
           poster="false"
           autoPlay
-          onEnded={() => setPlayVideo(false)}
+          onEnded={() => setPlayVideo(true)}
         />
       </div>
     );
@@ -29,7 +29,7 @@ const Architect = () => {
       <div className="fullscreen-bg">
         <Video
           cloudName="jepras"
-          publicId="waterstill"
+          publicId="Sphere"
           className="fullscreen-bg__video"
           poster="false"
           autoPlay

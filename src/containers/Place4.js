@@ -31,7 +31,7 @@ const Place4 = () => {
       <div className="center-div-mission" style={{ top: '70%' }}>
         <div className="absolute mission-overlay content">
           What do people do in the picture you take of this place?
-          <InputForm childInput="people" />
+          <InputForm childInput="people" next="normal" />
         </div>
       </div>
     </div>

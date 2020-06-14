@@ -22,7 +22,7 @@ const Place3 = () => {
           <div className="center-div-mission" style={{ top: '70%' }}>
             <div className="absolute mission-overlay content">
               Who are you with?
-              <InputForm childInput="with" phase="place" />
+              <InputForm childInput="with" next="place" />
             </div>
           </div>
         );
@@ -32,7 +32,7 @@ const Place3 = () => {
           <div className="center-div-mission" style={{ top: '70%' }}>
             <div className="absolute mission-overlay content">
               What feeling do you attribute to this place?
-              <SelectForm childInput="attribute" phase="place" />
+              <SelectForm childInput="attribute" next="place" />
             </div>
           </div>
         );

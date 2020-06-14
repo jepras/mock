@@ -3,12 +3,12 @@ import React, { createContext, useState } from 'react';
 export const ArchitectContext = createContext();
 
 const ArchitectContextProvider = (props) => {
-  const [activeArchitecttep, setActiveArchitecttep] = useState(0);
+  const [activeArchitectStep, setActiveArchitectStep] = useState(0);
   const steps = getSteps();
 
-  const handleNextArchitecttep = (state) => {
-    setActiveArchitecttep(
-      (prevActiveArchitecttep) => prevActiveArchitecttep + 1
+  const handleNextArchitectStep = (state) => {
+    setActiveArchitectStep(
+      (prevActiveArchitectStep) => prevActiveArchitectStep + 1
     );
   };
 
@@ -20,8 +20,8 @@ const ArchitectContextProvider = (props) => {
     <ArchitectContext.Provider
       value={{
         steps,
-        activeArchitecttep,
-        handleNextArchitecttep,
+        activeArchitectStep,
+        handleNextArchitectStep,
       }}
     >
       {props.children}

@@ -47,7 +47,7 @@ const Clouds2 = () => {
           <div className="absolute mission-overlay content">
             Which 3 characteristics/values do you appreciate most in the people
             you are with?
-            <SelectForm childInput="characteristics" />
+            <SelectForm childInput="characteristics" next="normal" />
           </div>
         </div>
       </>

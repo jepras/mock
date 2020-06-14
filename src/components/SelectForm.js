@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { FormContext } from '../contexts/FormContext';
 import { StepContext } from '../contexts/StepContext';
+import { ArchitectContext } from '../contexts/ArchitectContext';
+import { VisionaryContext } from '../contexts/VisionaryContext';
 import { CloudsContext } from '../contexts/CloudsContext';
 
 /* import './InputForm.css'; */
@@ -29,31 +31,43 @@ const ownStyles = {
   },
 };
 
-const SelectForm = (childInput) => {
+const SelectForm = (props) => {
   const { addMultiInput } = useContext(FormContext);
+  const { handleNextArchitectStep } = useContext(ArchitectContext);
+  const { handleNextVisionaryStep } = useContext(VisionaryContext);
   const { handleNextCloudStep } = useContext(CloudsContext);
-  const { handleNext, handleNextPlaceStep } = useContext(StepContext);
+  const { handleNext, handleNextPlaceStep, handleNextMissionStep } = useContext(
+    StepContext
+  );
 
   const [value, setValue] = useState([]);
   const [clicked, setClicked] = useState(null);
 
-  console.log('childinput: ', childInput.childInput);
-
   const handleSubmit = (event) => {
-    console.log(value);
+    console.log('logging: ', value);
     event.preventDefault();
-    addMultiInput(value, childInput.childInput);
+
+    /* submit */
+    addMultiInput(value, props.childInput);
+
+    /* maybe */
     setClicked(true);
-    if (childInput.childInput === 'unsatisfied') {
-      handleNext();
-    } else if (
-      childInput.childInput === 'characteristics' ||
-      'role' ||
-      'gender'
-    ) {
-      handleNextCloudStep();
-    } else {
+
+    console.log('props: ', props);
+
+    /* next step */
+    if (props.next === 'place') {
       handleNextPlaceStep();
+    } else if (props.next === 'cloud') {
+      handleNextCloudStep();
+    } else if (props.next === 'architect') {
+      handleNextArchitectStep();
+    } else if (props.next === 'visionary') {
+      handleNextVisionaryStep();
+    } else if (props.next === 'mission') {
+      handleNextMissionStep();
+    } else {
+      handleNext();
     }
   };
 
@@ -67,10 +81,7 @@ const SelectForm = (childInput) => {
     });
   };
 
-  var childInputInString = childInput.childInput.toString();
-  console.log('childInputInString', childInputInString);
-
-  if (childInput.childInput === 'unsatisfied') {
+  if (props.childInput === 'unsatisfied') {
     return (
       <>
         <Select
@@ -92,7 +103,7 @@ const SelectForm = (childInput) => {
     );
   }
 
-  if (childInput.childInput === 'attribute') {
+  if (props.childInput === 'attribute') {
     return (
       <>
         <Select
@@ -114,7 +125,7 @@ const SelectForm = (childInput) => {
     );
   }
 
-  if (childInput.childInput === 'characteristics') {
+  if (props.childInput === 'characteristics') {
     return (
       <>
         <Select
@@ -123,6 +134,7 @@ const SelectForm = (childInput) => {
           options={characteristics}
           styles={ownStyles}
           className="black-background"
+          isMulti
           /* value={value} */
           onChange={handleMultiChange}
         />
@@ -135,7 +147,7 @@ const SelectForm = (childInput) => {
     );
   }
 
-  if (childInput.childInput === 'role') {
+  if (props.childInput === 'role') {
     return (
       <>
         <Select
@@ -156,7 +168,7 @@ const SelectForm = (childInput) => {
     );
   }
 
-  if (childInput.childInput === 'gender') {
+  if (props.childInput === 'gender') {
     return (
       <>
         <Select

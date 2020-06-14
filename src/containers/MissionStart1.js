@@ -26,10 +26,7 @@ const MissionStart = () => {
             <div className="center-div-mission" style={{ top: '70%' }}>
               <div className="absolute mission-overlay content">
                 If you are ready to pursue the mock, enter your name
-                <InputForm
-                  childInput="name"
-                  handleNextMissionStep={handleNextMissionStep}
-                />
+                <InputForm childInput="name" next="mission" />
               </div>
             </div>
             <audio
@@ -51,7 +48,7 @@ const MissionStart = () => {
             <div className="center-div-mission" style={{ top: '70%' }}>
               <div className="absolute mission-overlay content">
                 What makes being human unique?
-                <InputForm childInput="unique" />
+                <InputForm childInput="unique" next="mission" />
               </div>
             </div>
             <audio
@@ -72,7 +69,7 @@ const MissionStart = () => {
           <div className="center-div-mission" style={{ top: '70%' }}>
             <div className="absolute mission-overlay content">
               How long have you been an earthling?
-              <InputForm childInput="earthling" />
+              <InputForm childInput="earthling" next="mission" />
             </div>
           </div>
         );
@@ -83,7 +80,7 @@ const MissionStart = () => {
             <div className="absolute mission-overlay content">
               What 3 aspects of your life do you feel are unsatisfied with at
               the moment?
-              <SelectForm childInput="unsatisfied" />
+              <SelectForm childInput="unsatisfied" next="normal" />
             </div>
           </div>
         );

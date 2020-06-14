@@ -44,7 +44,7 @@ const CloudsContent = () => {
               <div className="absolute mission-overlay content">
                 Which 3 characteristics/values do you appreciate most in the
                 people you are with?
-                <SelectForm childInput="characteristics" />
+                <SelectForm childInput="characteristics" next="cloud" />
               </div>
             </div>
           </>
@@ -56,7 +56,7 @@ const CloudsContent = () => {
             <div className="center-div-mission" style={{ top: '70vh' }}>
               <div className="absolute mission-overlay content">
                 Which role fits you best?
-                <SelectForm childInput="role" />
+                <SelectForm childInput="role" next="cloud" />
               </div>
             </div>
           </>
@@ -68,7 +68,7 @@ const CloudsContent = () => {
             <div className="absolute mission-overlay content">
               We are looking for mixed-gender Inter Virtual Experience. Before
               you go off, share with us who you are:
-              <SelectForm childInput="gender" />
+              <SelectForm childInput="gender" next="cloud" />
             </div>
           </div>
         );

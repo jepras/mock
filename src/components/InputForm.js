@@ -1,11 +1,17 @@
 import React, { useContext, useState } from 'react';
 import { FormContext } from '../contexts/FormContext';
 import { StepContext } from '../contexts/StepContext';
+import { ArchitectContext } from '../contexts/ArchitectContext';
+import { VisionaryContext } from '../contexts/VisionaryContext';
+import { CloudsContext } from '../contexts/CloudsContext';
 import './InputForm.css';
 
 const InputForm = (props) => {
   const { addInput } = useContext(FormContext);
-  const { handleNextMissionStep, handleNextPlaceStep, handleNext } = useContext(
+  const { handleNextArchitectStep } = useContext(ArchitectContext);
+  const { handleNextVisionaryStep } = useContext(VisionaryContext);
+  const { handleNextCloudStep } = useContext(CloudsContext);
+  const { handleNext, handleNextPlaceStep, handleNextMissionStep } = useContext(
     StepContext
   );
   const [value, setValue] = useState('');
@@ -15,20 +21,25 @@ const InputForm = (props) => {
   const handleSubmit = (event) => {
     console.log(props);
     event.preventDefault();
+
+    /* submit */
     addInput(value, props.childInput);
+
+    /* maybe */
     setClicked(true);
 
-    console.log('phase: ', props.phase);
-    if (props.phase === 'place') {
-      console.log('phase == phase:', props.phase);
+    /* next step */
+    if (props.next === 'place') {
       handleNextPlaceStep();
-    } else {
+    } else if (props.next === 'cloud') {
+      handleNextCloudStep();
+    } else if (props.next === 'architect') {
+      handleNextArchitectStep();
+    } else if (props.next === 'visionary') {
+      handleNextVisionaryStep();
+    } else if (props.next === 'mission') {
       handleNextMissionStep();
-    }
-
-    if (props.childInput === 'shared') {
-      handleNext();
-    } else if (props.childInput === 'people') {
+    } else {
       handleNext();
     }
   };

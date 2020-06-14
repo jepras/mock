@@ -20,6 +20,9 @@ import './App.css';
 /* context */
 import FormContextProvider from './contexts/FormContext';
 import StepContextProvider from './contexts/StepContext';
+import ArchitectContextProvider from './contexts/ArchitectContext';
+import VisionaryContextProvider from './contexts/VisionaryContext';
+import CloudsContextProvider from './contexts/CloudsContext';
 
 class App extends React.Component {
   render() {
@@ -27,21 +30,27 @@ class App extends React.Component {
       <div className="App">
         <FormContextProvider>
           <StepContextProvider>
-            <Switch>
-              {/* real */}
-              <Route exact path="/" component={Landing} />
-              <Route exact path="/start" component={Start} />
+            <ArchitectContextProvider>
+              <VisionaryContextProvider>
+                <CloudsContextProvider>
+                  <Switch>
+                    {/* real */}
+                    <Route exact path="/" component={Landing} />
+                    <Route exact path="/start" component={Start} />
 
-              <Route exact path="/experience" component={Experience} />
+                    <Route exact path="/experience" component={Experience} />
 
-              <Route exact path="/visionary" component={Visionary} />
-              <Route exact path="/architect" component={Architect} />
-              <Route exact path="/end" component={End} />
+                    <Route exact path="/visionary" component={Visionary} />
+                    <Route exact path="/architect" component={Architect} />
+                    <Route exact path="/end" component={End} />
 
-              {/* test */}
-              {/*               <Route path="/maptest" component={MapTest} />*/}
-              <Route path="/test" component={Test} />
-            </Switch>{' '}
+                    {/* test */}
+                    {/*               <Route path="/maptest" component={MapTest} />*/}
+                    <Route path="/test" component={Test} />
+                  </Switch>
+                </CloudsContextProvider>
+              </VisionaryContextProvider>
+            </ArchitectContextProvider>
           </StepContextProvider>
         </FormContextProvider>
       </div>

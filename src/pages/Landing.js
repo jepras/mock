@@ -17,7 +17,7 @@ const Landing = () => {
           style={{ position: 'relative', width: '100%' }}
         >
           <h1 className="has-text-black title" style={{ textAlign: 'center' }}>
-            Expect the mock
+            Expect the MOCK
             <Link to="start" className="secret-link">
               .
             </Link>

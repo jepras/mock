@@ -25,7 +25,7 @@ const MissionStart = () => {
           <>
             <div className="center-div-mission" style={{ top: '70%' }}>
               <div className="absolute mission-overlay content">
-                If you are ready to pursue the mock, enter your name
+                If you are ready to pursue the MOCK, enter your name
                 <InputForm childInput="name" next="mission" />
               </div>
             </div>

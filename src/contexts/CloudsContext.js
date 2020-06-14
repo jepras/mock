@@ -3,15 +3,8 @@ import React, { createContext, useState } from 'react';
 export const CloudsContext = createContext();
 
 const CloudsContextProvider = (props) => {
-  const [activeStep, setActiveStep] = useState(0);
-
   const [activeCloudStep, setActiveCloudStep] = useState(0);
   const steps = getSteps();
-
-  const handleNext = (state) => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    console.log('whats in state?', state);
-  };
 
   const handleNextCloudStep = (state) => {
     setActiveCloudStep((prevActiveCloudStep) => prevActiveCloudStep + 1);
@@ -25,9 +18,7 @@ const CloudsContextProvider = (props) => {
     <CloudsContext.Provider
       value={{
         steps,
-
         activeCloudStep,
-
         handleNextCloudStep,
       }}
     >

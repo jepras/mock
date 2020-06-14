@@ -7,10 +7,10 @@ const Visionary = () => {
   const { activeVisionaryStep } = useContext(StepContext);
   console.log('current step: ', activeVisionaryStep);
 
-  function getStepContent(step) {
+  function getVisionaryStepContent(step) {
     switch (step) {
       case 0:
-        return;
+        return <p>visionary</p>;
 
       default:
         return 'Unknown step';
@@ -19,7 +19,7 @@ const Visionary = () => {
 
   return (
     <div className="experience-container">
-      {getStepContent(activeVisionaryStep)}
+      {getVisionaryStepContent(activeVisionaryStep)}
     </div>
   );
 };

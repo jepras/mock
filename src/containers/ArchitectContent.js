@@ -5,7 +5,7 @@ import { FormContext } from '../contexts/FormContext';
 
 import SelectForm from '../components/SelectForm';
 
-const CloudsContent = () => {
+const ArchitectContent = () => {
   const { user } = useContext(FormContext);
   const { activeCloudStep } = useContext(CloudsContext);
   const [clicked] = useState(null);
@@ -94,4 +94,4 @@ const CloudsContent = () => {
   return <Content />;
 };
 
-export default CloudsContent;
+export default ArchitectContent;

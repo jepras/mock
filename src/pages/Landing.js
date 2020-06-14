@@ -7,9 +7,9 @@ import Timer from '../components/Timer';
 const Landing = () => {
   return (
     <div className="experience-container">
-      <Link to="start">
+      {/* <Link to="start">
         <Dot top="20vh" left="50%" />
-      </Link>
+      </Link> */}
 
       <div className="center-div" style={{ marginTop: '20%' }}>
         <div

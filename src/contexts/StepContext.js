@@ -4,6 +4,8 @@ export const StepContext = createContext();
 
 const StepContextProvider = (props) => {
   const [activeStep, setActiveStep] = useState(0);
+  const [activeArchitectStep, setActiveArchitectStep] = useState(0);
+  const [activeVisionaryStep, setActiveVisionaryStep] = useState(0);
   const [activeMissionStep, setActiveMissionStep] = useState(0);
   const [activePlaceStep, setActivePlaceStep] = useState(0);
   const steps = getSteps();
@@ -13,6 +15,16 @@ const StepContextProvider = (props) => {
     console.log('whats in state?', state);
   };
 
+  const handleNextArchitectStep = (state) => {
+    setActiveArchitectStep(
+      (prevActiveArchitectStep) => prevActiveArchitectStep + 1
+    );
+  };
+  const handleNextVisionaryStep = (state) => {
+    setActiveVisionaryStep(
+      (prevActiveVisionaryStep) => prevActiveVisionaryStep + 1
+    );
+  };
   const handleNextMissionStep = (state) => {
     setActiveMissionStep((prevActiveMissionStep) => prevActiveMissionStep + 1);
   };
@@ -31,8 +43,12 @@ const StepContextProvider = (props) => {
         activeStep,
         activePlaceStep,
         activeMissionStep,
+        activeVisionaryStep,
+        activeArchitectStep,
 
         handleNext,
+        handleNextArchitectStep,
+        handleNextVisionaryStep,
         handleNextMissionStep,
         handleNextPlaceStep,
       }}

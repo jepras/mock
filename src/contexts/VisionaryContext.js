@@ -3,12 +3,12 @@ import React, { createContext, useState } from 'react';
 export const VisionaryContext = createContext();
 
 const VisionaryContextProvider = (props) => {
-  const [activeVisionarytep, setActiveVisionarytep] = useState(0);
+  const [activeVisionaryStep, setActiveVisionaryStep] = useState(0);
   const steps = getSteps();
 
-  const handleNextVisionarytep = (state) => {
-    setActiveVisionarytep(
-      (prevActiveVisionarytep) => prevActiveVisionarytep + 1
+  const handleNextVisionaryStep = (state) => {
+    setActiveVisionaryStep(
+      (prevActiveVisionaryStep) => prevActiveVisionaryStep + 1
     );
   };
 
@@ -20,8 +20,8 @@ const VisionaryContextProvider = (props) => {
     <VisionaryContext.Provider
       value={{
         steps,
-        activeVisionarytep,
-        handleNextVisionarytep,
+        activeVisionaryStep,
+        handleNextVisionaryStep,
       }}
     >
       {props.children}

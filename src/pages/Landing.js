@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Dot from '../components/Dot';
+/* import Dot from '../components/Dot'; */
 import Timer2 from '../components/Timer2';
 
 const Landing = () => {

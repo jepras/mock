@@ -16,6 +16,9 @@ import {
   characteristics,
   role,
   gender,
+  age,
+  colour,
+  basicValues,
 } from '../assets/data/questionOptions';
 
 const animatedComponents = makeAnimated();
@@ -175,6 +178,70 @@ const SelectForm = (props) => {
           closeMenuOnSelect={true}
           components={animatedComponents}
           options={gender}
+          styles={ownStyles}
+          className="black-background"
+          /* value={value} */
+          onChange={handleMultiChange}
+        />
+        <div className="box-3">
+          <div className="btn btn-three" onClick={handleSubmit}>
+            {clicked ? <span>Submitted</span> : <span>Enter</span>}
+          </div>
+        </div>
+      </>
+    );
+  }
+
+  if (props.childInput === 'age') {
+    return (
+      <>
+        <Select
+          closeMenuOnSelect={true}
+          components={animatedComponents}
+          options={age}
+          styles={ownStyles}
+          className="black-background"
+          /* value={value} */
+          onChange={handleMultiChange}
+        />
+        <div className="box-3">
+          <div className="btn btn-three" onClick={handleSubmit}>
+            {clicked ? <span>Submitted</span> : <span>Enter</span>}
+          </div>
+        </div>
+      </>
+    );
+  }
+
+  if (props.childInput === 'colour') {
+    return (
+      <>
+        <Select
+          closeMenuOnSelect={true}
+          components={animatedComponents}
+          options={colour}
+          styles={ownStyles}
+          className="black-background"
+          /* value={value} */
+          onChange={handleMultiChange}
+        />
+        <div className="box-3">
+          <div className="btn btn-three" onClick={handleSubmit}>
+            {clicked ? <span>Submitted</span> : <span>Enter</span>}
+          </div>
+        </div>
+      </>
+    );
+  }
+
+  if (props.childInput === 'basicvalues') {
+    return (
+      <>
+        <Select
+          closeMenuOnSelect={false}
+          isMulti
+          options={basicValues}
+          components={animatedComponents}
           styles={ownStyles}
           className="black-background"
           /* value={value} */

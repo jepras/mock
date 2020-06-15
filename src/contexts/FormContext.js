@@ -6,7 +6,7 @@ const FormContextProvider = (props) => {
   const [user, setUser] = useState({
     name: '',
     input: '',
-    color: 'blue',
+    colour: '',
     order: { first: '', second: '' },
   });
 

@@ -14,9 +14,7 @@ import SelectForm from '../components/SelectForm';
 
 const MissionStart = () => {
   const [playVideo] = useState(null);
-  const { handleNext, activeMissionStep, handleNextMissionStep } = useContext(
-    StepContext
-  );
+  const { handleNext, activeMissionStep } = useContext(StepContext);
 
   function getMissionStepContent(step) {
     switch (step) {
@@ -69,7 +67,7 @@ const MissionStart = () => {
           <div className="center-div-mission" style={{ top: '70%' }}>
             <div className="absolute mission-overlay content">
               How long have you been an earthling?
-              <InputForm childInput="earthling" next="mission" />
+              <SelectForm childInput="age" next="mission" />
             </div>
           </div>
         );

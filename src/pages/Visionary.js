@@ -1,26 +1,83 @@
-import React, { useContext } from 'react';
-import { StepContext } from '../contexts/StepContext';
+import React, { useState, useContext } from 'react';
+import { Video } from 'cloudinary-react';
+import vand from '../assets/media/aud/vand.wav';
+
+import VisionaryContent from './VisionaryContent';
+import { FormContext } from '../contexts/FormContext';
 
 /* import steps */
 
 const Visionary = () => {
-  const { activeVisionaryStep } = useContext(StepContext);
-  console.log('current step: ', activeVisionaryStep);
+  const [playVideo, setPlayVideo] = useState(true);
+  const { user } = useContext(FormContext);
 
-  function getVisionaryStepContent(step) {
-    switch (step) {
-      case 0:
-        return <p>visionary</p>;
+  console.log('user: ', user);
 
-      default:
-        return 'Unknown step';
-    }
-  }
+  const Transition = () => {
+    return (
+      <div className="fullscreen-bg">
+        <Video
+          cloudName="jepras"
+          publicId="trimmednoise"
+          className="fullscreen-bg__video"
+          poster="false"
+          autoPlay
+          onEnded={() => setPlayVideo(false)}
+        />
+      </div>
+    );
+  };
+
+  const Background = () => {
+    return (
+      <div className="fullscreen-bg">
+        <Video
+          cloudName="jepras"
+          publicId="waterstill"
+          className="fullscreen-bg__video"
+          poster="false"
+          autoPlay
+          /* onEnded={() => setPlayVideo(true)} */
+          muted
+          loop
+        />
+      </div>
+    );
+  };
+
+  const Audio = () => {
+    return (
+      <audio controls autoPlay src={vand} loop style={{ display: 'none' }}>
+        Your browser does not support the
+        <code>audio</code> element.
+      </audio>
+    );
+  };
+
+  const Overlay = () => {
+    return (
+      <div
+        className={`${user.colour ? 'overlay-test' : 'none'}`}
+        style={{
+          backgroundColor: `${user.colour ? user.colour.value.value : 'none'}`,
+        }}
+      ></div>
+    );
+  };
 
   return (
-    <div className="experience-container">
-      {getVisionaryStepContent(activeVisionaryStep)}
-    </div>
+    <>
+      {playVideo === true ? (
+        <Transition />
+      ) : (
+        <>
+          <Overlay />
+          <Background />
+          <VisionaryContent />
+          <Audio />
+        </>
+      )}
+    </>
   );
 };
 

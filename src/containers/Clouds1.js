@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Video } from 'cloudinary-react';
 
 import CloudsContent from './CloudsContent';
-import CloudsContextProvider from '../contexts/CloudsContext';
 
 const Clouds1 = () => {
   const [playVideo, setPlayVideo] = useState(true);
@@ -33,6 +32,7 @@ const Clouds1 = () => {
           autoPlay
           /* onEnded={() => setPlayVideo(true)} */
           muted
+          loop
         />
       </div>
     );

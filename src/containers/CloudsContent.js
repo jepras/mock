@@ -16,7 +16,7 @@ const CloudsContent = () => {
       return (
         <div className="box-3">
           <Link to="visionary">
-            <div className="btn btn-three">
+            <div className="btn btn-three" style={{ left: '30%' }}>
               {clicked ? <span>Submitted</span> : <span>Enter</span>}
             </div>
           </Link>
@@ -26,7 +26,7 @@ const CloudsContent = () => {
       return (
         <div className="box-3">
           <Link to="architect">
-            <div className="btn btn-three">
+            <div className="btn btn-three" style={{ left: '30%' }}>
               {clicked ? <span>Submitted</span> : <span>Enter</span>}
             </div>
           </Link>
@@ -66,15 +66,16 @@ const CloudsContent = () => {
         return (
           <div className="center-div-mission" style={{ top: '70vh' }}>
             <div className="absolute mission-overlay content">
-              We are looking for mixed-gender Inter Virtual Experience. Before
-              you go off, share with us who you are:
+              We are looking for mixed-gender Inter Virtual Experience. <br />
+              <br />
+              Before you go off, share with us who you are:
               <SelectForm childInput="gender" next="cloud" />
             </div>
           </div>
         );
       case 3:
         return (
-          <div className="center-div-mission" style={{ top: '70vh' }}>
+          <div style={{ top: '70vh' }} className="center-div-mission">
             <div className="absolute mission-overlay content">
               Let's continue
               <MoveOn />

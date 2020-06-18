@@ -44,7 +44,7 @@ const SelectForm = (props) => {
   );
 
   const [value, setValue] = useState([]);
-  const [clicked, setClicked] = useState(null);
+  const [clicked] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();

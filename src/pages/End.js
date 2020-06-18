@@ -1,6 +1,5 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Video } from 'cloudinary-react';
-import ambience from '../assets/media/aud/ambience.wav';
 
 import { FormContext } from '../contexts/FormContext';
 
@@ -44,10 +43,15 @@ const Architect = () => {
 
   const Audio = () => {
     return (
-      <audio controls autoPlay src={ambience} loop style={{ display: 'none' }}>
-        Your browser does not support the
-        <code>audio</code> element.
-      </audio>
+      <Video
+        cloudName="jepras"
+        publicId="ambience"
+        className="fullscreen-bg__video"
+        poster="false"
+        autoPlay
+        style={{ display: 'none' }}
+        /* onEnded={() => setPlayVideo(true)} */
+      />
     );
   };
 

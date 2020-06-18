@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { Video } from 'cloudinary-react';
 import vand from '../assets/media/aud/vand.wav';
-import fire from '../config/fire';
 
 import VisionaryContent from '../containers/VisionaryContent';
 import { FormContext } from '../contexts/FormContext';

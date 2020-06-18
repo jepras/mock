@@ -47,15 +47,15 @@ const SelectForm = (props) => {
   const [clicked, setClicked] = useState(null);
 
   const handleSubmit = (event) => {
-    console.log('logging: ', value);
     event.preventDefault();
 
     /* submit */
     addMultiInput(value, props.childInput);
 
     /* maybe */
-    setClicked(true);
+    /* setClicked(true); */
 
+    console.log('logging: ', value);
     console.log('props: ', props);
 
     /* next step */
@@ -65,6 +65,14 @@ const SelectForm = (props) => {
       handleNextCloudStep();
     } else if (props.next === 'architect') {
       handleNextArchitectStep();
+      /* 
+      console.log('fading!');
+      setTimeout(() => {
+        console.log('Before next step');
+        handleNextArchitectStep();
+        console.log('AAAFTTTEEER next step');
+      }, 2000);
+      console.log('setTimeout done'); */
     } else if (props.next === 'visionary') {
       handleNextVisionaryStep();
     } else if (props.next === 'mission') {

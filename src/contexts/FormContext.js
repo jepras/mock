@@ -3,10 +3,13 @@ import React, { createContext, useState } from 'react';
 export const FormContext = createContext();
 
 const FormContextProvider = (props) => {
+  const [fading, setFading] = useState(false);
+
   const [user, setUser] = useState({
     name: '',
     input: '',
     colour: '',
+    basicvalues: '',
     order: { first: '', second: '' },
   });
 
@@ -52,6 +55,8 @@ const FormContextProvider = (props) => {
         addInput,
         setUser,
         addMultiInput,
+        fading,
+        setFading,
       }}
     >
       {props.children}

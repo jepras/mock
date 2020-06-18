@@ -1,24 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Video } from 'cloudinary-react';
-
-import vand from '../assets/media/aud/vand.wav';
+import ambience from '../assets/media/aud/ambience.wav';
 
 import ArchitectContent from '../containers/ArchitectContent';
-import ArchitectContextProvider from '../contexts/ArchitectContext';
+import { FormContext } from '../contexts/FormContext';
+
+/* import steps */
 
 const Architect = () => {
-  const [playVideo, setPlayVideo] = useState(false);
+  const [playVideo, setPlayVideo] = useState(true);
+  const { user } = useContext(FormContext);
+
+  console.log('user: ', user);
 
   const Transition = () => {
     return (
       <div className="fullscreen-bg">
         <Video
           cloudName="jepras"
-          publicId="earthzoom-reverse"
+          publicId="trimmednoise"
           className="fullscreen-bg__video"
           poster="false"
           autoPlay
-          onEnded={() => setPlayVideo(true)}
+          onEnded={() => setPlayVideo(false)}
         />
       </div>
     );
@@ -29,12 +33,18 @@ const Architect = () => {
       <div className="fullscreen-bg">
         <Video
           cloudName="jepras"
-          publicId="Sphere"
+          publicId="cropped-sphere"
           className="fullscreen-bg__video"
+          /* className={`${
+            fading
+              ? 'fade-to-black fullscreen-bg__video'
+              : 'fullscreen-bg__video'
+          }`} */
           poster="false"
           autoPlay
           /* onEnded={() => setPlayVideo(true)} */
           muted
+          loop
         />
       </div>
     );
@@ -42,18 +52,18 @@ const Architect = () => {
 
   const Audio = () => {
     return (
-      <audio
-        controls
-        autoPlay
-        src={vand}
-        loop={false}
-        style={{ display: 'none' }}
-      >
+      <audio controls autoPlay src={ambience} loop style={{ display: 'none' }}>
         Your browser does not support the
         <code>audio</code> element.
       </audio>
     );
   };
+
+  /* const Overlay = () => {
+    return (
+      <div className={`${user.basicvalues ? 'fade-to-black' : 'none'}`}></div>
+    );
+  }; */
 
   return (
     <>
@@ -61,10 +71,9 @@ const Architect = () => {
         <Transition />
       ) : (
         <>
+          {/* <Overlay /> */}
           <Background />
-          <ArchitectContextProvider>
-            <ArchitectContent />
-          </ArchitectContextProvider>
+          <ArchitectContent />
           <Audio />
         </>
       )}

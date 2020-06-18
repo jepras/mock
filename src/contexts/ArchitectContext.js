@@ -4,6 +4,7 @@ export const ArchitectContext = createContext();
 
 const ArchitectContextProvider = (props) => {
   const [activeArchitectStep, setActiveArchitectStep] = useState(0);
+  const [fading, setFading] = useState(false);
   const steps = getSteps();
 
   const handleNextArchitectStep = (state) => {
@@ -22,6 +23,8 @@ const ArchitectContextProvider = (props) => {
         steps,
         activeArchitectStep,
         handleNextArchitectStep,
+        fading,
+        setFading,
       }}
     >
       {props.children}

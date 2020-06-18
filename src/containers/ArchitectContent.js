@@ -1,50 +1,37 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { CloudsContext } from '../contexts/CloudsContext';
-import { FormContext } from '../contexts/FormContext';
 
+import { ArchitectContext } from '../contexts/ArchitectContext';
 import SelectForm from '../components/SelectForm';
+import InputForm from '../components/InputForm';
+
+/* import steps */
 
 const ArchitectContent = () => {
-  const { user } = useContext(FormContext);
-  const { activeCloudStep } = useContext(CloudsContext);
-  const [clicked] = useState(null);
-  console.log('user role', user);
+  const { activeArchitectStep } = useContext(ArchitectContext);
+  console.log('current step: ', activeArchitectStep);
 
   const MoveOn = () => {
-    if (user.role.value.value === 'visionary') {
-      return (
-        <div className="box-3">
-          <Link to="visionary">
-            <div className="btn btn-three">
-              {clicked ? <span>Submitted</span> : <span>Enter</span>}
-            </div>
-          </Link>
-        </div>
-      );
-    } else {
-      return (
-        <div className="box-3">
-          <Link to="architect">
-            <div className="btn btn-three">
-              {clicked ? <span>Submitted</span> : <span>Enter</span>}
-            </div>
-          </Link>
-        </div>
-      );
-    }
+    return (
+      <div className="box-3">
+        <Link to="end">
+          <div className="btn btn-three" style={{ left: '30%' }}>
+            <span>Enter</span>
+          </div>
+        </Link>
+      </div>
+    );
   };
 
-  function getCloudStepContent(step) {
+  function getArchitectStepContent(step) {
     switch (step) {
       case 0:
         return (
           <>
             <div className="center-div-mission" style={{ top: '70vh' }}>
               <div className="absolute mission-overlay content">
-                Which 3 characteristics/values do you appreciate most in the
-                people you are with?
-                <SelectForm childInput="characteristics" next="architect" />
+                What are the most basic values a society should have?
+                <SelectForm childInput="basicvalues" next="architect" />
               </div>
             </div>
           </>
@@ -55,8 +42,9 @@ const ArchitectContent = () => {
           <>
             <div className="center-div-mission" style={{ top: '70vh' }}>
               <div className="absolute mission-overlay content">
-                Which role fits you best?
-                <SelectForm childInput="role" next="architect" />
+                (UNDER DEVELOPMENT) Can you think of current examples of those
+                values? - Just press submit.
+                <SelectForm childInput="colour" next="architect" />
               </div>
             </div>
           </>
@@ -64,34 +52,38 @@ const ArchitectContent = () => {
 
       case 2:
         return (
-          <div className="center-div-mission" style={{ top: '70vh' }}>
-            <div className="absolute mission-overlay content">
-              We are looking for mixed-gender Inter Virtual Experience. Before
-              you go off, share with us who you are:
-              <SelectForm childInput="gender" next="architect" />
+          <>
+            <div className="center-div-mission" style={{ top: '70vh' }}>
+              <div className="absolute mission-overlay content">
+                If you could add a magic ingredient for human behaviour, what
+                would it be?
+                <InputForm childInput="magic" next="architect" />
+              </div>
             </div>
-          </div>
+          </>
         );
       case 3:
         return (
-          <div className="center-div-mission" style={{ top: '70vh' }}>
-            <div className="absolute mission-overlay content">
-              Let's continue
-              <MoveOn />
+          <>
+            <div style={{ top: '70vh' }} className="center-div-mission">
+              <div className="absolute mission-overlay content">
+                Let's continue
+                <MoveOn />
+              </div>
             </div>
-          </div>
+          </>
         );
 
       default:
-        return;
+        return 'Unknown step';
     }
   }
 
-  const Content = () => {
-    return <>{getCloudStepContent(activeCloudStep)}</>;
-  };
-
-  return <Content />;
+  return (
+    <div className="experience-container">
+      {getArchitectStepContent(activeArchitectStep)}
+    </div>
+  );
 };
 
 export default ArchitectContent;

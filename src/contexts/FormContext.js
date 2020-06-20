@@ -50,7 +50,7 @@ const FormContextProvider = (props) => {
   const submitData = () => {
     const db = firebase.firestore();
 
-    db.collection('submissionstest')
+    db.collection('submissions')
       .get()
 
       .then((snap) => {
@@ -58,7 +58,7 @@ const FormContextProvider = (props) => {
 
         console.log('size: ', size);
 
-        db.collection('submissionstest')
+        db.collection('submissions')
           /* add with whatever input */
           /* .add(user) */
 
@@ -84,6 +84,11 @@ const FormContextProvider = (props) => {
             color: { background: user.colour.value.value },
             colourAttributes: user.colourAttributes.value.value,
             label: user.name,
+            location: [
+              location.location1.name,
+              location.location2.name,
+              location.location3.name,
+            ],
             role: user.role.value.value,
             gender: user.gender.value.value,
             magic: user.magic,

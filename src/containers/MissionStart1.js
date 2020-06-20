@@ -5,8 +5,8 @@ import { Video } from 'cloudinary-react';
 
 import noise from '../assets/media/aud/noise.wav';
 import deepbreath from '../assets/media/aud/deepbreath.wav';
-import jen2 from '../assets/media/aud/jen2.wav';
-import jen3 from '../assets/media/aud/jen3.wav';
+/* import jen2 from '../assets/media/aud/jen2.wav';
+  import jen3 from '../assets/media/aud/jen3.wav'; */
 
 import lights from '../assets/media/img/lights.jpg';
 import InputForm from '../components/InputForm';
@@ -32,17 +32,16 @@ const MissionStart = () => {
             ) : (
               ''
             )}
-            <audio
-              controls
+
+            <Video
+              cloudName="jepras"
+              publicId="Jen_voice_2"
+              className="fullscreen-bg__video"
+              poster="false"
               autoPlay
-              src={jen2}
-              loop={false}
               style={{ display: 'none' }}
               onEnded={() => setShowQuestion(true)}
-            >
-              Your browser does not support the
-              <code>audio</code> element.
-            </audio>
+            />
           </>
         );
 
@@ -55,16 +54,14 @@ const MissionStart = () => {
                 <InputForm childInput="unique" next="mission" />
               </div>
             </div>
-            <audio
-              controls
+            <Video
+              cloudName="jepras"
+              publicId="Jen_voice_3"
+              className="fullscreen-bg__video"
+              poster="false"
               autoPlay
-              src={jen3}
-              loop={false}
               style={{ display: 'none' }}
-            >
-              Your browser does not support the
-              <code>audio</code> element.
-            </audio>
+            />
           </>
         );
 

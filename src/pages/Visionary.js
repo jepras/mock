@@ -22,7 +22,15 @@ const Visionary = () => {
           className="fullscreen-bg__video"
           poster="false"
           autoPlay
+        />
+        <Video
+          cloudName="jepras"
+          publicId="Jen_voice_5"
+          className="fullscreen-bg__video"
+          poster="false"
+          autoPlay
           onEnded={() => setPlayVideo(false)}
+          style={{ display: 'none' }}
         />
       </div>
     );

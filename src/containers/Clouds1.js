@@ -47,7 +47,6 @@ const Clouds1 = () => {
         poster="false"
         autoPlay
         style={{ display: 'none' }}
-        /* onEnded={() => setPlayVideo(true)} */
       />
     );
   };

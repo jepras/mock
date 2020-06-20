@@ -33,7 +33,7 @@ const VisGraph = (props) => {
       maxVelocity: 146,
       solver: 'forceAtlas2Based',
       timestep: 0.35,
-      stabilization: { iterations: 150 },
+      stabilization: { iterations: 11150 },
     },
     interaction: { hover: true },
     manipulation: {

@@ -4,7 +4,7 @@ import { StepContext } from '../contexts/StepContext';
 import { Video } from 'cloudinary-react';
 
 import news from '../assets/media/aud/news.wav';
-import whitenoiselyd from '../assets/media/aud/whitenoiselyd.wav';
+/* import whitenoiselyd from '../assets/media/aud/whitenoiselyd.wav'; */
 
 const Invitation = () => {
   const [playVideo, setPlayVideo] = useState(null);
@@ -21,19 +21,29 @@ const Invitation = () => {
           cloudName="jepras"
           publicId="tvnoise"
           autoPlay
+          loop
           className="fullscreen-bg__video"
         />
 
-        <audio
+        {/* <audio
           controls
           autoPlay
           src={whitenoiselyd}
           style={{ display: 'none' }}
-          onEnded={() => handleNext()}
+          
         >
           Your browser does not support the
           <code>audio</code> element.
-        </audio>
+        </audio> */}
+        <Video
+          cloudName="jepras"
+          publicId="Jen_voice_1"
+          className="fullscreen-bg__video"
+          poster="false"
+          autoPlay
+          style={{ display: 'none' }}
+          onEnded={() => handleNext()}
+        />
       </div>
     );
   };

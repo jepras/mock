@@ -41,18 +41,10 @@ const ShowGraph = () => {
       });
     } */
     for (var i = 0; i <= len; i++) {
-      if (i < len) {
-        edgesArr.push({
-          from: i,
-          to: i + 1,
-        });
-      } else {
-        console.log('one is out: ', i);
-        edgesArr.push({
-          from: i,
-          to: 0,
-        });
-      }
+      edgesArr.push({
+        from: i,
+        to: i + 1,
+      });
     }
   }
 

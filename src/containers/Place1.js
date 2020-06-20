@@ -31,7 +31,7 @@ const Place1 = (props) => {
   return (
     <div style={{ height: '100vh', width: '100%' }}>
       {mapComponent}
-      <div className="center-div-mission" style={{ top: '70%' }}>
+      <div className="center-div-mission" style={{ top: '60%' }}>
         <div className="absolute mission-overlay content">
           Which city or country on earth do you call home?
           <MapForm />

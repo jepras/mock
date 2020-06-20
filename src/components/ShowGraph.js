@@ -62,6 +62,8 @@ const ShowGraph = () => {
     }
   }
 
+  console.log('nodes arr: ', nodesArr);
+
   return (
     <>
       <VisGraph nodesArr={nodesArr} edgesArr={edgesArr} />

@@ -20,6 +20,7 @@ import {
   colour,
   basicValues,
   colourAttributes,
+  presentvalues,
 } from '../assets/data/questionOptions';
 
 const animatedComponents = makeAnimated();
@@ -311,7 +312,7 @@ const SelectForm = (props) => {
         <Select
           closeMenuOnSelect={false}
           isMulti
-          options={basicValues}
+          options={presentvalues}
           components={animatedComponents}
           styles={ownStyles}
           className="black-background"

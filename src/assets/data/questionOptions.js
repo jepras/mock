@@ -118,6 +118,30 @@ export const basicValues = [
   { value: 'wealth', label: 'wealth' },
 ];
 
+export const presentvalues = [
+  { value: 'creativity', label: 'creativity' },
+  { value: 'independence', label: 'independence' },
+  { value: 'varied life', label: 'varied life' },
+  { value: 'exciting life', label: 'exciting life' },
+  { value: 'pleasure', label: 'pleasure' },
+  { value: 'enjoying life', label: 'enjoying life' },
+  { value: 'family security', label: 'family security' },
+  { value: 'national security', label: 'national security' },
+  { value: 'traditional', label: 'traditional' },
+  { value: 'moderate', label: 'moderate' },
+  { value: 'obedience', label: 'obedience' },
+  { value: 'behave properly', label: 'behave properly' },
+  { value: 'broadmindedness', label: 'broadmindedness' },
+  { value: 'equality', label: 'equality' },
+  { value: 'environmental protection', label: 'environmental protection' },
+  { value: 'loyalty', label: 'loyalty' },
+  { value: 'helpfulness', label: 'helpfulness' },
+  { value: 'success', label: 'success' },
+  { value: 'recognition', label: 'recognition' },
+  { value: 'authority', label: 'authority' },
+  { value: 'wealth', label: 'wealth' },
+];
+
 export const colourAttributes = [
   { value: 'creativity', label: 'creativity' },
   { value: 'independence', label: 'independence' },

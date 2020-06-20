@@ -28,7 +28,7 @@ const Place2 = () => {
   return (
     <div style={{ height: '100vh', width: '100%' }}>
       {mapComponent}
-      <div className="center-div-mission" style={{ top: '70%' }}>
+      <div className="center-div-mission" style={{ top: '60%' }}>
         <div className="absolute mission-overlay content">
           At which geographical location did you last feel a strong sense of
           belonging?

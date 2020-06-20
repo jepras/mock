@@ -71,7 +71,7 @@ const Test = () => {
   const Content = () => {
     return (
       <>
-        <div className="center-div-mission" style={{ top: '70%' }}>
+        <div className="center-div-mission" style={{ top: '60%' }}>
           <div className="absolute mission-overlay content">
             What makes humans unique?
             <InputForm childInput="unique" next="mission" />

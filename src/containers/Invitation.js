@@ -19,7 +19,7 @@ const Invitation = () => {
       <div className="fullscreen-bg">
         <Video
           cloudName="jepras"
-          publicId="tvnoise"
+          publicId="Flicker"
           autoPlay
           loop
           className="fullscreen-bg__video"

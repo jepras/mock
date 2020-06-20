@@ -45,7 +45,7 @@ const Clouds2 = () => {
   const Content = () => {
     return (
       <>
-        <div className="center-div-mission" style={{ top: '70%' }}>
+        <div className="center-div-mission" style={{ top: '60%' }}>
           <div className="absolute mission-overlay content">
             Which 3 characteristics/values do you appreciate most in the people
             you are with?

@@ -40,7 +40,7 @@ const CloudsContent = () => {
       case 0:
         return (
           <>
-            <div className="center-div-mission" style={{ top: '70vh' }}>
+            <div className="center-div-mission" style={{ top: '60vh' }}>
               <div className="absolute mission-overlay content">
                 Which 3 attributes do you appreciate most in the people you are
                 closest with?
@@ -53,7 +53,7 @@ const CloudsContent = () => {
       case 1:
         return (
           <>
-            <div className="center-div-mission" style={{ top: '70vh' }}>
+            <div className="center-div-mission" style={{ top: '60vh' }}>
               <div className="absolute mission-overlay content">
                 Which role fits you best?
                 <SelectForm childInput="role" next="cloud" />
@@ -64,7 +64,7 @@ const CloudsContent = () => {
 
       case 2:
         return (
-          <div className="center-div-mission" style={{ top: '70vh' }}>
+          <div className="center-div-mission" style={{ top: '60vh' }}>
             <div className="absolute mission-overlay content">
               We are looking for mixed-gender for this experience. <br />
               <br />
@@ -75,7 +75,7 @@ const CloudsContent = () => {
         );
       case 3:
         return (
-          <div style={{ top: '70vh' }} className="center-div-mission">
+          <div style={{ top: '60vh' }} className="center-div-mission">
             <div className="absolute mission-overlay content">
               Let's continue
               <MoveOn />

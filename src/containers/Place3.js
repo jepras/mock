@@ -19,7 +19,7 @@ const Place3 = () => {
     switch (step) {
       case 0:
         return (
-          <div className="center-div-mission" style={{ top: '70%' }}>
+          <div className="center-div-mission" style={{ top: '60%' }}>
             <div className="absolute mission-overlay content">
               Take a look around. Who are you with?
               <InputForm childInput="with" next="place" />
@@ -29,7 +29,7 @@ const Place3 = () => {
 
       case 1:
         return (
-          <div className="center-div-mission" style={{ top: '70%' }}>
+          <div className="center-div-mission" style={{ top: '60%' }}>
             <div className="absolute mission-overlay content">
               Which 3 attributes describe your feeling at this place best?
               <SelectForm childInput="attribute" next="place" />
@@ -39,7 +39,7 @@ const Place3 = () => {
 
       case 2:
         return (
-          <div className="center-div-mission" style={{ top: '70%' }}>
+          <div className="center-div-mission" style={{ top: '60%' }}>
             <div className="absolute mission-overlay content">
               At which geographical location did you last feel you shared common
               interests & beliefs with the people around you?

@@ -28,7 +28,7 @@ const Place4 = () => {
   return (
     <div style={{ height: '100vh', width: '100%' }}>
       {mapComponent}
-      <div className="center-div-mission" style={{ top: '70%' }}>
+      <div className="center-div-mission" style={{ top: '60%' }}>
         <div className="absolute mission-overlay content">
           We travel with high speed. Make sure you take a few minutes to settle
           in before you proceed - take a look around. What do people do in the

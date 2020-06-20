@@ -35,7 +35,7 @@ const VisionaryContent = () => {
       case 0:
         return (
           <>
-            <div className="center-div-mission" style={{ top: '70vh' }}>
+            <div className="center-div-mission" style={{ top: '60vh' }}>
               <div className="absolute mission-overlay content">
                 What colour is your new society?
                 <SelectForm childInput="colour" next="visionary" />
@@ -47,7 +47,7 @@ const VisionaryContent = () => {
       case 1:
         return (
           <>
-            <div className="center-div-mission" style={{ top: '70vh' }}>
+            <div className="center-div-mission" style={{ top: '60vh' }}>
               <div className="absolute mission-overlay content">
                 What does the colour stand for?{' '}
                 <SelectForm childInput="colourAttributes" next="visionary" />
@@ -59,7 +59,7 @@ const VisionaryContent = () => {
       case 2:
         return (
           <>
-            <div className="center-div-mission" style={{ top: '70vh' }}>
+            <div className="center-div-mission" style={{ top: '60vh' }}>
               <div className="absolute mission-overlay content">
                 What are the 3 most basic values our future society should have?
                 <SelectForm childInput="basicvalues" next="visionary" />
@@ -71,7 +71,7 @@ const VisionaryContent = () => {
       case 3:
         return (
           <>
-            <div className="center-div-mission" style={{ top: '70vh' }}>
+            <div className="center-div-mission" style={{ top: '60vh' }}>
               <div className="absolute mission-overlay content">
                 Which 3 values do you see most present in society right now?
                 <SelectForm childInput="presentvalues" next="visionary" />
@@ -83,7 +83,7 @@ const VisionaryContent = () => {
       case 4:
         return (
           <>
-            <div className="center-div-mission" style={{ top: '70vh' }}>
+            <div className="center-div-mission" style={{ top: '60vh' }}>
               <div className="absolute mission-overlay content">
                 If you could add a magic ingredient for our future society, what
                 would it be?
@@ -95,7 +95,7 @@ const VisionaryContent = () => {
       case 5:
         return (
           <>
-            <div style={{ top: '70vh' }} className="center-div-mission">
+            <div style={{ top: '60vh' }} className="center-div-mission">
               <div className="absolute mission-overlay content">
                 <MoveOn />
               </div>

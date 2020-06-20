@@ -23,7 +23,7 @@ const MissionStart = () => {
         return (
           <>
             {showQuestion ? (
-              <div className="center-div-mission" style={{ top: '70%' }}>
+              <div className="center-div-mission" style={{ top: '60%' }}>
                 <div className="absolute mission-overlay content">
                   If you are ready to pursue the MOCK, enter your name
                   <InputForm childInput="name" next="mission" />
@@ -46,7 +46,7 @@ const MissionStart = () => {
       case 1:
         return (
           <>
-            <div className="center-div-mission" style={{ top: '70%' }}>
+            <div className="center-div-mission" style={{ top: '60%' }}>
               <div className="absolute mission-overlay content">
                 What makes being human unique?
                 <InputForm childInput="unique" next="mission" />
@@ -65,7 +65,7 @@ const MissionStart = () => {
 
       case 2:
         return (
-          <div className="center-div-mission" style={{ top: '70%' }}>
+          <div className="center-div-mission" style={{ top: '60%' }}>
             <div className="absolute mission-overlay content">
               How long have you been an earthling?
               <SelectForm childInput="age" next="mission" />
@@ -75,7 +75,7 @@ const MissionStart = () => {
 
       case 3:
         return (
-          <div className="center-div-mission" style={{ top: '70%' }}>
+          <div className="center-div-mission" style={{ top: '60%' }}>
             <div className="absolute mission-overlay content">
               If any, which 3 aspects do you miss most in your life recently?
               <SelectForm childInput="unsatisfied" next="normal" />

@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { Video } from 'cloudinary-react';
 
 import { FormContext } from '../contexts/FormContext';
 import ShowGraph from '../components/ShowGraph';

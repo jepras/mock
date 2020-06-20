@@ -101,9 +101,9 @@ const FormContextProvider = (props) => {
             label: user.name ? user.name : 'no label',
             location: location.location1
               ? [
-                  location.location1.name,
-                  location.location2.name,
-                  location.location3.name,
+                  location.location1[0].name,
+                  location.location2[0].name,
+                  location.location3[0].name,
                 ]
               : ['no', 'no', 'no'],
             role: user.role.value ? user.role.value.value : 'none',

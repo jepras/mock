@@ -20,7 +20,7 @@ export default class VideoModal extends React.Component {
         <ModalVideo
           channel="youtube"
           isOpen={this.state.isOpen}
-          videoId="MCkTebktHVc"
+          videoId="ITtFtb7d4qQ"
           onClose={() => this.setState({ isOpen: false })}
         />
         {/* <button onClick={this.openModal}>Open</button> */}

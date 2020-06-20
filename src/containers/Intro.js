@@ -18,7 +18,7 @@ const Intro = () => {
           autoPlay
           preload="true"
           poster="true"
-          src="http://res.cloudinary.com/jepras/video/upload/opening.mp4"
+          src="https://res.cloudinary.com/jepras/video/upload/opening.mp4"
           type="video/mp4"
         />
       </div>

@@ -9,19 +9,28 @@ import InputForm from '../components/InputForm';
 /* import steps */
 
 const VisionaryContent = () => {
-  const { submitData } = useContext(FormContext);
+  const { submitData, submit } = useContext(FormContext);
   const { activeVisionaryStep } = useContext(VisionaryContext);
   console.log('current step: ', activeVisionaryStep);
 
   const MoveOn = () => {
     return (
       <div className="box-3">
-        <button onClick={submitData}>submit</button>
-        <Link to="end">
-          <div className="btn btn-three" style={{ left: '18%' }}>
-            <span>Enter</span>
+        {submit ? (
+          <Link to="end">
+            <div className="btn btn-three" style={{ left: '18%' }}>
+              <span>See MOCK</span>
+            </div>
+          </Link>
+        ) : (
+          <div
+            className="btn btn-three"
+            style={{ left: '18%' }}
+            onClick={submitData}
+          >
+            <span>Submit</span>
           </div>
-        </Link>
+        )}
       </div>
     );
   };

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
+import { FormContext } from '../contexts/FormContext';
 import { ArchitectContext } from '../contexts/ArchitectContext';
 import SelectForm from '../components/SelectForm';
 import InputForm from '../components/InputForm';
@@ -8,17 +9,29 @@ import InputForm from '../components/InputForm';
 /* import steps */
 
 const ArchitectContent = () => {
+  const { submitData, submit } = useContext(FormContext);
+
   const { activeArchitectStep } = useContext(ArchitectContext);
   console.log('current step: ', activeArchitectStep);
 
   const MoveOn = () => {
     return (
       <div className="box-3">
-        <Link to="end">
-          <div className="btn btn-three" style={{ left: '18%' }}>
-            <span>Enter</span>
+        {submit ? (
+          <Link to="end">
+            <div className="btn btn-three" style={{ left: '18%' }}>
+              <span>See MOCK</span>
+            </div>
+          </Link>
+        ) : (
+          <div
+            className="btn btn-three"
+            style={{ left: '18%' }}
+            onClick={submitData}
+          >
+            <span>Submit</span>
           </div>
-        </Link>
+        )}
       </div>
     );
   };

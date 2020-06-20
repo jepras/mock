@@ -46,7 +46,7 @@ const Invitation = () => {
           autoPlay
           preload="true"
           poster="true"
-          src="http://res.cloudinary.com/jepras/video/upload/ink1.mp4"
+          src="https://res.cloudinary.com/jepras/video/upload/ink1.mp4"
           type="video/mp4"
         />
       </div>

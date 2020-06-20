@@ -5,6 +5,7 @@ export const FormContext = createContext();
 
 const FormContextProvider = (props) => {
   const [fading, setFading] = useState(false);
+  const [submit, setSubmit] = useState(false);
 
   const [user, setUser] = useState({
     name: 'from context',
@@ -58,6 +59,10 @@ const FormContextProvider = (props) => {
         console.log('user basic values', user.basicvalues.value);
 
         db.collection('submissionstest')
+          /* add with whatever input */
+          /* .add(user) */
+
+          /* for prod, add properly */
           .add({
             ...user,
             age: user.age.value.value,
@@ -78,7 +83,7 @@ const FormContextProvider = (props) => {
             ],
             color: { background: user.colour.value.value },
             colourAttributes: user.colourAttributes.value.value,
-            label: user.name.value.value,
+            label: user.name,
             role: user.role.value.value,
             gender: user.gender.value.value,
             magic: user.magic,
@@ -105,6 +110,7 @@ const FormContextProvider = (props) => {
         console.error("couldn't connect to database ", error);
       });
 
+    setSubmit(true);
     console.log('adding user to database', user);
   };
 
@@ -121,6 +127,8 @@ const FormContextProvider = (props) => {
         fading,
         setFading,
         submitData,
+        submit,
+        setSubmit,
       }}
     >
       {props.children}

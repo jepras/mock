@@ -48,7 +48,6 @@ const End = () => {
       <Video
         cloudName="jepras"
         publicId="videoplayback"
-        className="fullscreen-bg__video"
         poster="false"
         autoPlay
         style={{ display: 'none' }}
@@ -100,6 +99,7 @@ const End = () => {
                   id="mce-EMAIL"
                   placeholder="email address"
                   required
+                  autoFocus
                 ></input>
 
                 {/*  hidden */}
@@ -151,8 +151,8 @@ const End = () => {
             </a>
           </div>
         </div>
-        <VideoModal />
       </div>
+      <VideoModal />
     </>
   );
 };

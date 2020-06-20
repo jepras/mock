@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { StepContext } from '../contexts/StepContext';
 
-import { Video } from 'cloudinary-react';
 import vand from '../assets/media/aud/vand.wav';
 import Place1 from './Place1';
 import Place2 from './Place2';

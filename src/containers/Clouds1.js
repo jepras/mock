@@ -53,13 +53,13 @@ const Clouds1 = () => {
 
   return (
     <>
+      <Audio />
       {playVideo === true ? (
         <Transition />
       ) : (
         <>
           <Background />
           <CloudsContent />
-          <Audio />
         </>
       )}
     </>

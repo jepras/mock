@@ -27,7 +27,21 @@ const ShowGraph = () => {
       nodesArr.push({
         ...doc,
 
-        title: 'name: ' + doc.name + '. id: ' + doc.id,
+        title:
+          'A <b>' +
+          doc.gender +
+          '</b> named <b>' +
+          doc.name +
+          '</b> who seems to be a <b>' +
+          doc.role +
+          '</b>.<br> <b>' +
+          doc.name +
+          '</b> thinks that what makes humans unique is <b>' +
+          doc.unique +
+          '</b>.<br> If <b>' +
+          doc.name +
+          '</b> could choose one magic ingredient to the human behaviour it would be: <b>' +
+          doc.magic,
       })
     );
     console.log('values', values);

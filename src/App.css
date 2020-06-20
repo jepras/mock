@@ -1,3 +1,19 @@
+.left-align {
+  text-align: left !important;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
 .overlay-test {
   position: fixed; /* Sit on top of the page content */
   display: block; /* Hidden by default */
@@ -21,6 +37,7 @@
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
+  z-index: 1;
 }
 
 .user-context {

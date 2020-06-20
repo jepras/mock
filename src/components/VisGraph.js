@@ -22,7 +22,8 @@ const VisGraph = (props) => {
       shape: 'dot',
       size: 16,
     },
-    height: '500px',
+    height: '800px',
+    /* border: 'black', */
     physics: {
       forceAtlas2Based: {
         gravitationalConstant: -26,
@@ -33,7 +34,7 @@ const VisGraph = (props) => {
       maxVelocity: 146,
       solver: 'forceAtlas2Based',
       timestep: 0.35,
-      stabilization: { iterations: 11150 },
+      stabilization: { iterations: 1111150 },
     },
     interaction: { hover: true },
     manipulation: {

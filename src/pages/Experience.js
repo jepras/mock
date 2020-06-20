@@ -7,10 +7,6 @@ import Invitation from '../containers/Invitation';
 import MissionStart1 from '../containers/MissionStart1';
 import MissionStart2 from '../containers/MissionStart2';
 import Places from '../containers/Places';
-import Place1 from '../containers/Place1';
-import Place2 from '../containers/Place2';
-import Place3 from '../containers/Place3';
-import Place4 from '../containers/Place4';
 import Clouds1 from '../containers/Clouds1';
 
 const Experience = () => {
@@ -29,12 +25,7 @@ const Experience = () => {
         return <MissionStart2 />;
       case 4:
         return <Places />;
-      /* case 5:
-        return <Place2 />;
-      case 6:
-        return <Place3 />;
-      case 7:
-        return <Place4 />; */
+
       case 5:
         return <Clouds1 />;
 
@@ -44,37 +35,8 @@ const Experience = () => {
   }
 
   return (
-    <div className="experience-container">
-      {getStepContent(activeStep)}
-      {/* <div className="user-context">
-        <p>form context</p>
-        {JSON.stringify(user)}
-        <p>location</p>
-        {JSON.stringify(location)}
-      </div> */}
-    </div>
+    <div className="experience-container">{getStepContent(activeStep)}</div>
   );
-
-  // OLD LOOPING STEPPER
-  // return (
-  //   <div>
-  //     {/* loop through steps */}
-  //     {steps.map((label, index) => (
-  //       /* display block for current step, none for rest */
-  //       <div
-  //         key={label}
-  //         style={
-  //           index === activeStep ? { display: "block" } : { display: "none" }
-  //         }
-  //         /* set vw & vh to 100 */
-  //         className="experience-container"
-  //       >
-  //         {/* show step content */}
-  //         <div key={label}>{getStepContent(index)}</div>
-  //       </div>
-  //     ))}
-  //   </div>
-  // );
 };
 
 export default Experience;

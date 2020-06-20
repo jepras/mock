@@ -56,7 +56,7 @@ const FormContextProvider = (props) => {
       .then((snap) => {
         var size = snap.size + 1; // will return the collection size
 
-        console.log('user basic values', user.basicvalues.value);
+        console.log('size: ', size);
 
         db.collection('submissionstest')
           /* add with whatever input */

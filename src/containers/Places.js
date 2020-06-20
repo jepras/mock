@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { StepContext } from '../contexts/StepContext';
 
-import vand from '../assets/media/aud/vand.wav';
+import { Video } from 'cloudinary-react';
 import Place1 from './Place1';
 import Place2 from './Place2';
 import Place3 from './Place3';
@@ -34,10 +34,14 @@ const Places = () => {
 
   const Audio = () => {
     return (
-      <audio controls autoPlay src={vand} loop style={{ display: 'none' }}>
-        Your browser does not support the
-        <code>audio</code> element.
-      </audio>
+      <Video
+        cloudName="jepras"
+        publicId="noisesdot"
+        className="fullscreen-bg__video"
+        poster="false"
+        autoPlay
+        style={{ display: 'none' }}
+      />
     );
   };
 

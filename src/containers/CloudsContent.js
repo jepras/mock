@@ -16,7 +16,7 @@ const CloudsContent = () => {
       return (
         <div className="box-3">
           <Link to="visionary">
-            <div className="btn btn-three" style={{ left: '30%' }}>
+            <div className="btn btn-three" style={{ left: '18%' }}>
               {clicked ? <span>Submitted</span> : <span>Enter</span>}
             </div>
           </Link>
@@ -42,8 +42,8 @@ const CloudsContent = () => {
           <>
             <div className="center-div-mission" style={{ top: '70vh' }}>
               <div className="absolute mission-overlay content">
-                Which 3 characteristics/values do you appreciate most in the
-                people you are with?
+                Which 3 attributes do you appreciate most in the people you are
+                with?
                 <SelectForm childInput="characteristics" next="cloud" />
               </div>
             </div>
@@ -66,7 +66,7 @@ const CloudsContent = () => {
         return (
           <div className="center-div-mission" style={{ top: '70vh' }}>
             <div className="absolute mission-overlay content">
-              We are looking for mixed-gender Inter Virtual Experience. <br />
+              We are looking for mixed-gender for this experience. <br />
               <br />
               Before you go off, share with us who you are:
               <SelectForm childInput="gender" next="cloud" />

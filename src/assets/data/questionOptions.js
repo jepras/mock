@@ -9,16 +9,27 @@ export const age = [
 ];
 
 export const unsatisfied = [
-  { value: 'financial', label: 'financial' },
-  { value: 'community', label: 'community' },
-  { value: 'personal growth', label: 'personal growth' },
-  { value: 'recreation', label: 'recreation' },
-  { value: 'spirituality', label: 'spirituality' },
-  { value: 'friendships', label: 'friendships' },
-  { value: 'home life', label: 'home life' },
-  { value: 'work', label: 'work' },
-  { value: 'family', label: 'family' },
-  { value: 'health', label: 'health' },
+  { value: 'creativity', label: 'creativity' },
+  { value: 'independence', label: 'independence' },
+  { value: 'varied life', label: 'varied life' },
+  { value: 'exciting life', label: 'exciting life' },
+  { value: 'pleasure', label: 'pleasure' },
+  { value: 'enjoying life', label: 'enjoying life' },
+  { value: 'family security', label: 'family security' },
+  { value: 'national security', label: 'national security' },
+  { value: 'traditional', label: 'traditional' },
+  { value: 'moderate', label: 'moderate' },
+  { value: 'obedience', label: 'obedience' },
+  { value: 'behave properly', label: 'behave properly' },
+  { value: 'broadmindedness', label: 'broadmindedness' },
+  { value: 'equality', label: 'equality' },
+  { value: 'environmental protection', label: 'environmental protection' },
+  { value: 'loyalty', label: 'loyalty' },
+  { value: 'helpfulness', label: 'helpfulness' },
+  { value: 'success', label: 'success' },
+  { value: 'recognition', label: 'recognition' },
+  { value: 'authority', label: 'authority' },
+  { value: 'wealth', label: 'wealth' },
 ];
 
 export const attribute = [
@@ -60,8 +71,8 @@ export const characteristics = [
 ];
 
 export const role = [
-  { value: 'visionary', label: 'visionary' },
-  { value: 'architect', label: 'architect' },
+  { value: 'visionary', label: 'visionary - someone who imagines the future' },
+  { value: 'architect', label: 'architect - someone who realizes the future' },
 ];
 
 export const gender = [
@@ -84,6 +95,30 @@ export const colour = [
 ];
 
 export const basicValues = [
+  { value: 'creativity', label: 'creativity' },
+  { value: 'independence', label: 'independence' },
+  { value: 'varied life', label: 'varied life' },
+  { value: 'exciting life', label: 'exciting life' },
+  { value: 'pleasure', label: 'pleasure' },
+  { value: 'enjoying life', label: 'enjoying life' },
+  { value: 'family security', label: 'family security' },
+  { value: 'national security', label: 'national security' },
+  { value: 'traditional', label: 'traditional' },
+  { value: 'moderate', label: 'moderate' },
+  { value: 'obedience', label: 'obedience' },
+  { value: 'behave properly', label: 'behave properly' },
+  { value: 'broadmindedness', label: 'broadmindedness' },
+  { value: 'equality', label: 'equality' },
+  { value: 'environmental protection', label: 'environmental protection' },
+  { value: 'loyalty', label: 'loyalty' },
+  { value: 'helpfulness', label: 'helpfulness' },
+  { value: 'success', label: 'success' },
+  { value: 'recognition', label: 'recognition' },
+  { value: 'authority', label: 'authority' },
+  { value: 'wealth', label: 'wealth' },
+];
+
+export const colourAttributes = [
   { value: 'creativity', label: 'creativity' },
   { value: 'independence', label: 'independence' },
   { value: 'varied life', label: 'varied life' },

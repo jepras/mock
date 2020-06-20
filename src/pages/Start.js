@@ -10,7 +10,7 @@ const Start = () => {
         controls
         autoPlay
         src={clock}
-        loop={false}
+        loop={true}
         style={{ display: 'none' }}
       >
         Your browser does not support the
@@ -21,15 +21,12 @@ const Start = () => {
 
   const Content = () => {
     return (
-      <div
-        className="experience-container"
-        style={{ backgroundColor: '#c0c0c0' }}
-      >
+      <div className="experience-container">
         <Link to="experience">
           <Dot top="40vh" left="50%" />
         </Link>
 
-        <div className="center-div" style={{ marginTop: '40%' }}>
+        <div className="center-div" style={{ marginTop: '30%' }}>
           <div
             className="content"
             style={{ position: 'relative', width: '100%' }}

@@ -2,10 +2,11 @@ import React, { useContext } from 'react';
 import { Video } from 'cloudinary-react';
 
 import { FormContext } from '../contexts/FormContext';
+import ShowGraph from '../components/ShowGraph';
 
 /* import steps */
 
-const Architect = () => {
+const End = () => {
   const { user } = useContext(FormContext);
 
   console.log('user: ', user);
@@ -57,11 +58,13 @@ const Architect = () => {
 
   return (
     <>
-      <Background />
-      <Content />
-      <Audio />
+      <ShowGraph />
+      <p>
+        Do you want to share this with {user.with} that you thought about
+        earlier?{' '}
+      </p>
     </>
   );
 };
 
-export default Architect;
+export default End;

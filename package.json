@@ -19,6 +19,7 @@
     "react-countdown-circle-timer": "^2.1.2",
     "react-countdown-date": "^1.0.0",
     "react-dom": "^16.13.0",
+    "react-firebase-hooks": "^2.2.0",
     "react-geocode": "^0.2.1",
     "react-graph-vis": "^1.0.5",
     "react-router-dom": "^5.1.2",

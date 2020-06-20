@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import firebase from '../config/fire';
 
 export const FormContext = createContext();
 
@@ -6,11 +7,11 @@ const FormContextProvider = (props) => {
   const [fading, setFading] = useState(false);
 
   const [user, setUser] = useState({
-    name: '',
-    input: '',
+    name: 'from context',
+    /* input: '',
     colour: '',
     basicvalues: '',
-    order: { first: '', second: '' },
+    order: { first: '', second: '' }, */
   });
 
   const [location, setLocation] = useState({
@@ -45,6 +46,68 @@ const FormContextProvider = (props) => {
     }
   };
 
+  const submitData = () => {
+    const db = firebase.firestore();
+
+    db.collection('submissionstest')
+      .get()
+
+      .then((snap) => {
+        var size = snap.size + 1; // will return the collection size
+
+        console.log('user basic values', user.basicvalues.value);
+
+        db.collection('submissionstest')
+          .add({
+            ...user,
+            age: user.age.value.value,
+            attribute: [
+              user.attribute.value[0].value,
+              user.attribute.value[1].value,
+              user.attribute.value[2].value,
+            ],
+            basicvalues: [
+              user.basicvalues.value[0].value,
+              user.basicvalues.value[1].value,
+              user.basicvalues.value[2].value,
+            ],
+            characteristics: [
+              user.characteristics.value[0].value,
+              user.characteristics.value[1].value,
+              user.characteristics.value[2].value,
+            ],
+            color: { background: user.colour.value.value },
+            colourAttributes: user.colourAttributes.value.value,
+            label: user.name.value.value,
+            role: user.role.value.value,
+            gender: user.gender.value.value,
+            magic: user.magic,
+            unique: user.unique,
+            unsatisfied: [
+              user.unsatisfied.value[0].value,
+              user.unsatisfied.value[1].value,
+              user.unsatisfied.value[2].value,
+            ],
+            with: user.with,
+            id: size,
+          })
+          .then(function (docRef) {
+            console.log('Document written with ID: ', docRef.id);
+          })
+          .catch(function (error) {
+            console.error('Error adding document: ', error);
+          });
+
+        console.log('db size: ', size);
+      })
+
+      .catch(function (error) {
+        console.error("couldn't connect to database ", error);
+      });
+
+    console.log('adding user to database', user);
+  };
+
   return (
     <FormContext.Provider
       value={{
@@ -57,6 +120,7 @@ const FormContextProvider = (props) => {
         addMultiInput,
         fading,
         setFading,
+        submitData,
       }}
     >
       {props.children}

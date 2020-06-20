@@ -39,6 +39,10 @@
   }
 }
 
+.center-btn {
+  text-align: center;
+}
+
 /* buttons */
 .btn {
   left: 40%;

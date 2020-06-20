@@ -38,7 +38,7 @@ const Place1 = (props) => {
       {mapComponent}
       <div className="center-div-mission" style={{ top: '70%' }}>
         <div className="absolute mission-overlay content">
-          Where is your current place of residence? Or Where is home?
+          Which city or country on earth do you call home?
           <MapForm />
         </div>
       </div>

@@ -5,6 +5,8 @@ import { Video } from 'cloudinary-react';
 import jen4 from '../assets/media/aud/jen4.wav';
 import SelectForm from '../components/SelectForm';
 
+/* not being showed */
+
 const Clouds2 = () => {
   const [playVideo, setPlayVideo] = useState(true);
   const { handleNext } = useContext(StepContext);

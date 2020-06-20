@@ -76,8 +76,7 @@ const MissionStart = () => {
         return (
           <div className="center-div-mission" style={{ top: '70%' }}>
             <div className="absolute mission-overlay content">
-              What 3 aspects of your life do you feel are unsatisfied with at
-              the moment?
+              If any, which 3 aspects do you miss most in your life recently?
               <SelectForm childInput="unsatisfied" next="normal" />
             </div>
           </div>

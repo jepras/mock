@@ -30,7 +30,8 @@ const Place2 = () => {
       {mapComponent}
       <div className="center-div-mission" style={{ top: '70%' }}>
         <div className="absolute mission-overlay content">
-          Where did you last feel a strong sense of belonging?
+          At which geographical location did you last feel a strong sense of
+          belonging?
           <MapForm />
         </div>
       </div>

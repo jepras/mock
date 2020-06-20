@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 import { StepContext } from '../contexts/StepContext';
-import Dot from '../components/Dot';
 
 import { Video } from 'cloudinary-react';
 
@@ -56,9 +55,7 @@ const Invitation = () => {
 
   const Content = () => {
     return (
-      <div onClick={acceptChallenge}>
-        <Dot top="50vh" left="50%" />
-      </div>
+      <div onClick={acceptChallenge}>{/* <Dot top="50vh" left="50%" /> */}</div>
     );
   };
 
@@ -70,6 +67,7 @@ const Invitation = () => {
         src={news}
         loop={false}
         style={{ display: 'none' }}
+        onEnded={() => acceptChallenge()}
       >
         Your browser does not support the
         <code>audio</code> element.

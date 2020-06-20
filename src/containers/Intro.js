@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 
 /* imports */
 import { StepContext } from '../contexts/StepContext';
@@ -10,24 +10,9 @@ import clock from '../assets/media/aud/clock.wav';
 const Intro = () => {
   const { handleNext } = useContext(StepContext);
 
-  useEffect(() => {
-    console.log('Intro rendered');
-    return () => {
-      console.log('component cleaned up');
-    };
-  }, []);
-
   const Background = () => {
     return (
       <div className="fullscreen-bg">
-        {/* <Video
-          cloudName="jepras"
-          publicId="opening"
-          poster="true"
-          className="fullscreen-bg__video"
-          autoPlay
-          preload="true"
-        /> */}
         <video
           className="fullscreen-bg__video"
           autoPlay
@@ -70,6 +55,8 @@ const Intro = () => {
         src={clock}
         loop={false}
         style={{ display: 'none' }}
+        /*         onEnded={() => setDot(true)}
+         */
       >
         Your browser does not support the
         <code>audio</code> element.

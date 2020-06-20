@@ -11,21 +11,16 @@ import firebase from '../config/fire';
 /* import steps */
 
 const VisionaryContent = () => {
-  const { user } = useContext(FormContext);
+  const { user, submitData } = useContext(FormContext);
   const { activeVisionaryStep } = useContext(VisionaryContext);
   console.log('current step: ', activeVisionaryStep);
-
-  const submitData = () => {
-    const db = firebase.firestore();
-    db.collection('submissionstest').add(user);
-  };
 
   const MoveOn = () => {
     return (
       <div className="box-3">
         <button onClick={submitData}>submit</button>
         <Link to="end">
-          <div className="btn btn-three" style={{ left: '30%' }}>
+          <div className="btn btn-three" style={{ left: '18%' }}>
             <span>Enter</span>
           </div>
         </Link>
@@ -53,7 +48,7 @@ const VisionaryContent = () => {
             <div className="center-div-mission" style={{ top: '70vh' }}>
               <div className="absolute mission-overlay content">
                 What does the colour stand for?{' '}
-                <InputForm childInput="colourmeaning" next="visionary" />
+                <SelectForm childInput="colourAttributes" next="visionary" />
               </div>
             </div>
           </>

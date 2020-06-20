@@ -15,7 +15,6 @@ const InputForm = (props) => {
     StepContext
   );
   const [value, setValue] = useState('');
-  const [clicked, setClicked] = useState(null);
   console.log('childinput: ', props.childInput);
 
   const handleSubmit = (event) => {
@@ -26,7 +25,7 @@ const InputForm = (props) => {
     addInput(value, props.childInput);
 
     /* maybe */
-    setClicked(true);
+    /* setClicked(true); */
 
     /* next step */
     if (props.next === 'place') {
@@ -60,9 +59,19 @@ const InputForm = (props) => {
         />
       </div>
       <div className="box-3">
-        <div className="btn btn-three" onClick={handleSubmit}>
-          {clicked ? <span>Submitted</span> : <span>Enter</span>}
-        </div>
+        {value.length < 2 ? (
+          <div className="center-btn">
+            <p>Please fill out the question..</p>
+          </div>
+        ) : value.length > 100 ? (
+          <div className="center-btn">
+            <p>Max 100 characters. Be more concise. No fluff.</p>
+          </div>
+        ) : (
+          <div className="btn btn-three" onClick={handleSubmit}>
+            <span>Enter</span>
+          </div>
+        )}
       </div>
     </form>
   );

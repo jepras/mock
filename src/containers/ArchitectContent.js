@@ -15,7 +15,7 @@ const ArchitectContent = () => {
     return (
       <div className="box-3">
         <Link to="end">
-          <div className="btn btn-three" style={{ left: '30%' }}>
+          <div className="btn btn-three" style={{ left: '18%' }}>
             <span>Enter</span>
           </div>
         </Link>
@@ -80,7 +80,7 @@ const ArchitectContent = () => {
   }
 
   return (
-    <div className="experience-container">
+    <div className="experience-container" style={{ zIndex: '1' }}>
       {getArchitectStepContent(activeArchitectStep)}
     </div>
   );

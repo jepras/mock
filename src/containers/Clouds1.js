@@ -59,7 +59,6 @@ const Clouds1 = () => {
       ) : (
         <>
           <Background />
-
           <CloudsContent />
           <Audio />
         </>

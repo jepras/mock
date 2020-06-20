@@ -41,8 +41,8 @@ const Place3 = () => {
         return (
           <div className="center-div-mission" style={{ top: '70%' }}>
             <div className="absolute mission-overlay content">
-              Where did you last feel you shared common interest & beliefs with
-              people around you?
+              At which geographical location did you last feel you shared common
+              interests & beliefs with the people around you?
               <MapForm childInput="shared" phase="place" />
             </div>
           </div>

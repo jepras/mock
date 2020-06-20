@@ -19,6 +19,7 @@ import {
   age,
   colour,
   basicValues,
+  colourAttributes,
 } from '../assets/data/questionOptions';
 
 const animatedComponents = makeAnimated();
@@ -32,6 +33,12 @@ const ownStyles = {
       color: '#FFF',
     };
   },
+  menuList: (styles) => ({
+    ...styles,
+    maxHeight: '150px',
+
+    borderTop: '0px black !important',
+  }),
 };
 
 const SelectForm = (props) => {
@@ -43,8 +50,10 @@ const SelectForm = (props) => {
     StepContext
   );
 
+  const [option, setOption] = useState([]);
   const [value, setValue] = useState([]);
-  const [clicked] = useState(null);
+
+  console.log('options in state', option);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -53,7 +62,6 @@ const SelectForm = (props) => {
     addMultiInput(value, props.childInput);
 
     /* maybe */
-    /* setClicked(true); */
 
     console.log('logging: ', value);
     console.log('props: ', props);
@@ -84,12 +92,13 @@ const SelectForm = (props) => {
 
   const handleMultiChange = (option) => {
     console.log('value: ', value);
-    console.log('option: ', option);
+
     setValue((value) => {
       return {
         value: option,
       };
     });
+    setOption(option);
   };
 
   if (props.childInput === 'unsatisfied') {
@@ -105,11 +114,15 @@ const SelectForm = (props) => {
           /* value={value} */
           onChange={handleMultiChange}
         />
-        <div className="box-3">
-          <div className="btn btn-three" onClick={handleSubmit}>
-            {clicked ? <span>Submitted</span> : <span>Enter</span>}
+        {option.length === 3 ? (
+          <div className="box-3">
+            <div className="btn btn-three" onClick={handleSubmit}>
+              <span>Enter</span>
+            </div>
           </div>
-        </div>
+        ) : (
+          ''
+        )}
       </>
     );
   }
@@ -127,11 +140,15 @@ const SelectForm = (props) => {
           /* value={value} */
           onChange={handleMultiChange}
         />
-        <div className="box-3">
-          <div className="btn btn-three" onClick={handleSubmit}>
-            {clicked ? <span>Submitted</span> : <span>Enter</span>}
+        {option.length === 3 ? (
+          <div className="box-3">
+            <div className="btn btn-three" onClick={handleSubmit}>
+              <span>Enter</span>
+            </div>
           </div>
-        </div>
+        ) : (
+          ''
+        )}
       </>
     );
   }
@@ -140,7 +157,7 @@ const SelectForm = (props) => {
     return (
       <>
         <Select
-          closeMenuOnSelect={true}
+          closeMenuOnSelect={false}
           components={animatedComponents}
           options={characteristics}
           styles={ownStyles}
@@ -149,11 +166,15 @@ const SelectForm = (props) => {
           /* value={value} */
           onChange={handleMultiChange}
         />
-        <div className="box-3">
-          <div className="btn btn-three" onClick={handleSubmit}>
-            {clicked ? <span>Submitted</span> : <span>Enter</span>}
+        {option.length === 3 ? (
+          <div className="box-3">
+            <div className="btn btn-three" onClick={handleSubmit}>
+              <span>Enter</span>
+            </div>
           </div>
-        </div>
+        ) : (
+          ''
+        )}
       </>
     );
   }
@@ -170,11 +191,15 @@ const SelectForm = (props) => {
           /* value={value} */
           onChange={handleMultiChange}
         />
-        <div className="box-3">
-          <div className="btn btn-three" onClick={handleSubmit}>
-            {clicked ? <span>Submitted</span> : <span>Enter</span>}
+        {option.value ? (
+          <div className="box-3">
+            <div className="btn btn-three" onClick={handleSubmit}>
+              <span>Enter</span>
+            </div>
           </div>
-        </div>
+        ) : (
+          ''
+        )}
       </>
     );
   }
@@ -191,11 +216,15 @@ const SelectForm = (props) => {
           /* value={value} */
           onChange={handleMultiChange}
         />
-        <div className="box-3">
-          <div className="btn btn-three" onClick={handleSubmit}>
-            {clicked ? <span>Submitted</span> : <span>Enter</span>}
+        {option.value ? (
+          <div className="box-3">
+            <div className="btn btn-three" onClick={handleSubmit}>
+              <span>Enter</span>
+            </div>
           </div>
-        </div>
+        ) : (
+          ''
+        )}
       </>
     );
   }
@@ -212,11 +241,15 @@ const SelectForm = (props) => {
           /* value={value} */
           onChange={handleMultiChange}
         />
-        <div className="box-3">
-          <div className="btn btn-three" onClick={handleSubmit}>
-            {clicked ? <span>Submitted</span> : <span>Enter</span>}
+        {option.value ? (
+          <div className="box-3">
+            <div className="btn btn-three" onClick={handleSubmit}>
+              <span>Enter</span>
+            </div>
           </div>
-        </div>
+        ) : (
+          ''
+        )}
       </>
     );
   }
@@ -233,11 +266,15 @@ const SelectForm = (props) => {
           /* value={value} */
           onChange={handleMultiChange}
         />
-        <div className="box-3">
-          <div className="btn btn-three" onClick={handleSubmit}>
-            {clicked ? <span>Submitted</span> : <span>Enter</span>}
+        {option.value ? (
+          <div className="box-3">
+            <div className="btn btn-three" onClick={handleSubmit}>
+              <span>Enter</span>
+            </div>
           </div>
-        </div>
+        ) : (
+          ''
+        )}
       </>
     );
   }
@@ -255,11 +292,40 @@ const SelectForm = (props) => {
           /* value={value} */
           onChange={handleMultiChange}
         />
-        <div className="box-3">
-          <div className="btn btn-three" onClick={handleSubmit}>
-            {clicked ? <span>Submitted</span> : <span>Enter</span>}
+        {option.length === 3 ? (
+          <div className="box-3">
+            <div className="btn btn-three" onClick={handleSubmit}>
+              <span>Enter</span>
+            </div>
           </div>
-        </div>
+        ) : (
+          ''
+        )}
+      </>
+    );
+  }
+
+  if (props.childInput === 'colourAttributes') {
+    return (
+      <>
+        <Select
+          closeMenuOnSelect={true}
+          options={colourAttributes}
+          components={animatedComponents}
+          styles={ownStyles}
+          className="black-background"
+          /* value={value} */
+          onChange={handleMultiChange}
+        />
+        {option.value ? (
+          <div className="box-3">
+            <div className="btn btn-three" onClick={handleSubmit}>
+              <span>Enter</span>
+            </div>
+          </div>
+        ) : (
+          ''
+        )}
       </>
     );
   }

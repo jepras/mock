@@ -40,6 +40,7 @@ const Places = () => {
         className="fullscreen-bg__video"
         poster="false"
         autoPlay
+        loop
         style={{ display: 'none' }}
       />
     );

@@ -11,7 +11,6 @@ import InputForm from '../components/InputForm';
 const VisionaryContent = () => {
   const { submitData, submit } = useContext(FormContext);
   const { activeVisionaryStep } = useContext(VisionaryContext);
-  console.log('current step: ', activeVisionaryStep);
 
   const MoveOn = () => {
     return (

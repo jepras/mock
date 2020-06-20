@@ -54,8 +54,6 @@ const SelectForm = (props) => {
   const [option, setOption] = useState([]);
   const [value, setValue] = useState([]);
 
-  console.log('options in state', option);
-
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -64,7 +62,6 @@ const SelectForm = (props) => {
 
     /* maybe */
 
-    console.log('logging: ', value);
     console.log('props: ', props);
 
     /* next step */
@@ -92,8 +89,6 @@ const SelectForm = (props) => {
   };
 
   const handleMultiChange = (option) => {
-    console.log('value: ', value);
-
     setValue((value) => {
       return {
         value: option,
@@ -115,7 +110,7 @@ const SelectForm = (props) => {
           /* value={value} */
           onChange={handleMultiChange}
         />
-        {option.length === 3 ? (
+        {option && option.length === 3 ? (
           <div className="box-3">
             <div className="btn btn-three" onClick={handleSubmit}>
               <span>Enter</span>
@@ -141,7 +136,7 @@ const SelectForm = (props) => {
           /* value={value} */
           onChange={handleMultiChange}
         />
-        {option.length === 3 ? (
+        {option && option.length === 3 ? (
           <div className="box-3">
             <div className="btn btn-three" onClick={handleSubmit}>
               <span>Enter</span>
@@ -167,7 +162,7 @@ const SelectForm = (props) => {
           /* value={value} */
           onChange={handleMultiChange}
         />
-        {option.length === 3 ? (
+        {option && option.length === 3 ? (
           <div className="box-3">
             <div className="btn btn-three" onClick={handleSubmit}>
               <span>Enter</span>
@@ -192,7 +187,7 @@ const SelectForm = (props) => {
           /* value={value} */
           onChange={handleMultiChange}
         />
-        {option.value ? (
+        {option && option.value ? (
           <div className="box-3">
             <div className="btn btn-three" onClick={handleSubmit}>
               <span>Enter</span>
@@ -217,7 +212,7 @@ const SelectForm = (props) => {
           /* value={value} */
           onChange={handleMultiChange}
         />
-        {option.value ? (
+        {option && option.value ? (
           <div className="box-3">
             <div className="btn btn-three" onClick={handleSubmit}>
               <span>Enter</span>
@@ -242,7 +237,7 @@ const SelectForm = (props) => {
           /* value={value} */
           onChange={handleMultiChange}
         />
-        {option.value ? (
+        {option && option.value ? (
           <div className="box-3">
             <div className="btn btn-three" onClick={handleSubmit}>
               <span>Enter</span>
@@ -267,7 +262,7 @@ const SelectForm = (props) => {
           /* value={value} */
           onChange={handleMultiChange}
         />
-        {option.value ? (
+        {option && option.value ? (
           <div className="box-3">
             <div className="btn btn-three" onClick={handleSubmit}>
               <span>Enter</span>
@@ -293,7 +288,7 @@ const SelectForm = (props) => {
           /* value={value} */
           onChange={handleMultiChange}
         />
-        {option.length === 3 ? (
+        {option && option.length === 3 ? (
           <div className="box-3">
             <div className="btn btn-three" onClick={handleSubmit}>
               <span>Enter</span>
@@ -319,7 +314,7 @@ const SelectForm = (props) => {
           /* value={value} */
           onChange={handleMultiChange}
         />
-        {option.length === 3 ? (
+        {option && option.length === 3 ? (
           <div className="box-3">
             <div className="btn btn-three" onClick={handleSubmit}>
               <span>Enter</span>
@@ -344,7 +339,7 @@ const SelectForm = (props) => {
           /* value={value} */
           onChange={handleMultiChange}
         />
-        {option.value ? (
+        {option && option.value ? (
           <div className="box-3">
             <div className="btn btn-three" onClick={handleSubmit}>
               <span>Enter</span>

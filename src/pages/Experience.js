@@ -11,7 +11,6 @@ import Clouds1 from '../containers/Clouds1';
 
 const Experience = () => {
   const { activeStep } = useContext(StepContext);
-  console.log('current step: ', activeStep);
 
   function getStepContent(step) {
     switch (step) {

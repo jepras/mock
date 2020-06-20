@@ -57,7 +57,9 @@ const FormContextProvider = (props) => {
         var size = snap.size + 1; // will return the collection size
 
         console.log('size: ', size);
+        console.log('user: ', user);
 
+        /* if (user.age) { */
         db.collection('submissions')
           /* add with whatever input */
           /* .add(user) */
@@ -65,40 +67,57 @@ const FormContextProvider = (props) => {
           /* for prod, add properly */
           .add({
             ...user,
-            age: user.age.value.value,
-            attribute: [
-              user.attribute.value[0].value,
-              user.attribute.value[1].value,
-              user.attribute.value[2].value,
-            ],
+            age: user.age ? user.age.value.value : 'none',
+            attribute: user.attribute.value[0]
+              ? [
+                  user.attribute.value[0].value,
+                  user.attribute.value[1].value,
+                  user.attribute.value[2].value,
+                ]
+              : ['no', 'no', 'no'],
             basicvalues: [
               user.basicvalues.value[0].value,
               user.basicvalues.value[1].value,
               user.basicvalues.value[2].value,
             ],
-            characteristics: [
-              user.characteristics.value[0].value,
-              user.characteristics.value[1].value,
-              user.characteristics.value[2].value,
+            presentvalues: [
+              user.presentvalues.value[0].value,
+              user.presentvalues.value[1].value,
+              user.presentvalues.value[2].value,
             ],
-            color: { background: user.colour.value.value },
-            colourAttributes: user.colourAttributes.value.value,
-            label: user.name,
-            location: [
-              location.location1.name,
-              location.location2.name,
-              location.location3.name,
-            ],
-            role: user.role.value.value,
-            gender: user.gender.value.value,
-            magic: user.magic,
-            unique: user.unique,
-            unsatisfied: [
-              user.unsatisfied.value[0].value,
-              user.unsatisfied.value[1].value,
-              user.unsatisfied.value[2].value,
-            ],
-            with: user.with,
+            characteristics: user.characteristics.value[0]
+              ? [
+                  user.characteristics.value[0].value,
+                  user.characteristics.value[1].value,
+                  user.characteristics.value[2].value,
+                ]
+              : ['no', 'no', 'no'],
+            color: user.colour.value
+              ? { background: user.colour.value.value }
+              : { background: 'none' },
+            colourAttributes: user.colourAttributes
+              ? user.colourAttributes.value.value
+              : 'none',
+            label: user.name ? user.name : 'no label',
+            location: location.location1
+              ? [
+                  location.location1.name,
+                  location.location2.name,
+                  location.location3.name,
+                ]
+              : ['no', 'no', 'no'],
+            role: user.role.value ? user.role.value.value : 'none',
+            gender: user.gender.value ? user.gender.value.value : 'none',
+            magic: user.magic ? user.magic : 'none',
+            unique: user.unique ? user.unique : 'none',
+            unsatisfied: user.unsatisfied
+              ? [
+                  user.unsatisfied.value[0].value,
+                  user.unsatisfied.value[1].value,
+                  user.unsatisfied.value[2].value,
+                ]
+              : ['no', 'no', 'no'],
+            with: user.with ? user.with : 'none',
             id: size,
           })
           .then(function (docRef) {
@@ -107,8 +126,9 @@ const FormContextProvider = (props) => {
           .catch(function (error) {
             console.error('Error adding document: ', error);
           });
-
-        console.log('db size: ', size);
+        /* } else {
+          db.collection('submissions').add(user);
+        } */
       })
 
       .catch(function (error) {

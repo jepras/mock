@@ -15,7 +15,6 @@ const InputForm = (props) => {
     StepContext
   );
   const [value, setValue] = useState('');
-  console.log('childinput: ', props.childInput);
 
   const handleSubmit = (event) => {
     console.log(props);

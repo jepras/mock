@@ -12,7 +12,6 @@ const ArchitectContent = () => {
   const { submitData, submit } = useContext(FormContext);
 
   const { activeArchitectStep } = useContext(ArchitectContext);
-  console.log('current step: ', activeArchitectStep);
 
   const MoveOn = () => {
     return (

@@ -19,16 +19,12 @@ const ArchitectContent = () => {
       <div className="box-3">
         {submit ? (
           <Link to="end">
-            <div className="btn btn-three" style={{ left: '18%' }}>
-              <span>See MOCK</span>
+            <div style={{ color: '#ffffff' }}>
+              <span>Build the MOCK and return back to reality</span>
             </div>
           </Link>
         ) : (
-          <div
-            className="btn btn-three"
-            style={{ left: '18%' }}
-            onClick={submitData}
-          >
+          <div onClick={submitData}>
             <span>Submit</span>
           </div>
         )}
@@ -43,7 +39,7 @@ const ArchitectContent = () => {
           <>
             <div className="center-div-mission" style={{ top: '70vh' }}>
               <div className="absolute mission-overlay content">
-                What are the most basic values a society should have?
+                What are the 3 most basic values our future society should have?
                 <SelectForm childInput="basicvalues" next="architect" />
               </div>
             </div>
@@ -55,9 +51,8 @@ const ArchitectContent = () => {
           <>
             <div className="center-div-mission" style={{ top: '70vh' }}>
               <div className="absolute mission-overlay content">
-                (UNDER DEVELOPMENT) Can you think of current examples of those
-                values? - Just press submit.
-                <SelectForm childInput="colour" next="architect" />
+                Which 3 values do you see most present in society right now?
+                <SelectForm childInput="presentvalues" next="architect" />
               </div>
             </div>
           </>
@@ -68,7 +63,7 @@ const ArchitectContent = () => {
           <>
             <div className="center-div-mission" style={{ top: '70vh' }}>
               <div className="absolute mission-overlay content">
-                If you could add a magic ingredient for human behaviour, what
+                If you could add a magic ingredient for our future society, what
                 would it be?
                 <InputForm childInput="magic" next="architect" />
               </div>
@@ -80,7 +75,6 @@ const ArchitectContent = () => {
           <>
             <div style={{ top: '70vh' }} className="center-div-mission">
               <div className="absolute mission-overlay content">
-                Let's continue
                 <MoveOn />
               </div>
             </div>

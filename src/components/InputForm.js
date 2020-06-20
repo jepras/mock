@@ -61,7 +61,7 @@ const InputForm = (props) => {
       <div className="box-3">
         {value.length < 2 ? (
           <div className="center-btn">
-            <p>Please fill out the question..</p>
+            <p>Please fill out the question.</p>
           </div>
         ) : value.length > 100 ? (
           <div className="center-btn">

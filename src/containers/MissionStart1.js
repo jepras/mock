@@ -14,6 +14,7 @@ import SelectForm from '../components/SelectForm';
 
 const MissionStart = () => {
   const [playVideo] = useState(null);
+  const [showQuestion, setShowQuestion] = useState(false);
   const { handleNext, activeMissionStep } = useContext(StepContext);
 
   function getMissionStepContent(step) {
@@ -21,18 +22,23 @@ const MissionStart = () => {
       case 0:
         return (
           <>
-            <div className="center-div-mission" style={{ top: '70%' }}>
-              <div className="absolute mission-overlay content">
-                If you are ready to pursue the MOCK, enter your name
-                <InputForm childInput="name" next="mission" />
+            {showQuestion ? (
+              <div className="center-div-mission" style={{ top: '70%' }}>
+                <div className="absolute mission-overlay content">
+                  If you are ready to pursue the MOCK, enter your name
+                  <InputForm childInput="name" next="mission" />
+                </div>
               </div>
-            </div>
+            ) : (
+              ''
+            )}
             <audio
               controls
               autoPlay
               src={jen2}
               loop={false}
               style={{ display: 'none' }}
+              onEnded={() => setShowQuestion(true)}
             >
               Your browser does not support the
               <code>audio</code> element.
@@ -123,21 +129,7 @@ const MissionStart = () => {
   };
 
   const Content = () => {
-    return (
-      <>
-        {getMissionStepContent(activeMissionStep)}
-        {/* {activeMissionStep === 3 ? (
-          <div onClick={handleNext}>
-            <Dot top="50vh" left="50%" />
-          </div>
-        ) : (
-          <></>
-        )} */}
-        {/* <div onClick={handleNextMissionStep}>
-          <Dot top="50vh" left="10%" />
-        </div> */}
-      </>
-    );
+    return <>{getMissionStepContent(activeMissionStep)}</>;
   };
 
   const Audio = () => {

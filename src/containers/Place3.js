@@ -21,7 +21,7 @@ const Place3 = () => {
         return (
           <div className="center-div-mission" style={{ top: '70%' }}>
             <div className="absolute mission-overlay content">
-              Who are you with?
+              Take a look around. Who are you with?
               <InputForm childInput="with" next="place" />
             </div>
           </div>
@@ -31,7 +31,7 @@ const Place3 = () => {
         return (
           <div className="center-div-mission" style={{ top: '70%' }}>
             <div className="absolute mission-overlay content">
-              What feeling do you attribute to this place?
+              Which 3 attributes describe your feeling at this place best?
               <SelectForm childInput="attribute" next="place" />
             </div>
           </div>

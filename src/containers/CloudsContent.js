@@ -43,7 +43,7 @@ const CloudsContent = () => {
             <div className="center-div-mission" style={{ top: '70vh' }}>
               <div className="absolute mission-overlay content">
                 Which 3 attributes do you appreciate most in the people you are
-                with?
+                closest with?
                 <SelectForm childInput="characteristics" next="cloud" />
               </div>
             </div>

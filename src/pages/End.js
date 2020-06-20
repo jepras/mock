@@ -53,6 +53,10 @@ const End = () => {
 
   return (
     <>
+      <p>
+        Welcome back! You were not alone on this mission. Connection being
+        established and the MOCK will be built shortly!
+      </p>
       <ShowGraph />
       <p>
         Do you want to share this with {user.with} that you thought about

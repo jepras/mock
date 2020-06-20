@@ -3,6 +3,7 @@ import { StepContext } from '../contexts/StepContext';
 import { Video } from 'cloudinary-react';
 
 import jen4 from '../assets/media/aud/jen4.wav';
+import deepbreath from '../assets/media/aud/deepbreath.wav';
 
 const MissionStart2 = () => {
   const [playVideo, setPlayVideo] = useState(null);
@@ -62,6 +63,21 @@ const MissionStart2 = () => {
     );
   };
 
+  const Audio2 = () => {
+    return (
+      <audio
+        controls
+        autoPlay
+        src={deepbreath}
+        loop={false}
+        style={{ display: 'none' }}
+      >
+        Your browser does not support the
+        <code>audio</code> element.
+      </audio>
+    );
+  };
+
   return (
     <>
       {playVideo === true ? (
@@ -71,6 +87,7 @@ const MissionStart2 = () => {
           <Background />
           <Content />
           <Audio />
+          <Audio2 />
         </>
       )}
     </>

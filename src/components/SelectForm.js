@@ -305,6 +305,32 @@ const SelectForm = (props) => {
     );
   }
 
+  if (props.childInput === 'presentvalues') {
+    return (
+      <>
+        <Select
+          closeMenuOnSelect={false}
+          isMulti
+          options={basicValues}
+          components={animatedComponents}
+          styles={ownStyles}
+          className="black-background"
+          /* value={value} */
+          onChange={handleMultiChange}
+        />
+        {option.length === 3 ? (
+          <div className="box-3">
+            <div className="btn btn-three" onClick={handleSubmit}>
+              <span>Enter</span>
+            </div>
+          </div>
+        ) : (
+          ''
+        )}
+      </>
+    );
+  }
+
   if (props.childInput === 'colourAttributes') {
     return (
       <>

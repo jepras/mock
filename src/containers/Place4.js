@@ -30,7 +30,9 @@ const Place4 = () => {
       {mapComponent}
       <div className="center-div-mission" style={{ top: '70%' }}>
         <div className="absolute mission-overlay content">
-          What do people do in the picture you take of this place?
+          We travel with high speed. Make sure you take a few minutes to settle
+          in before you proceed - take a look around. What do people do in the
+          picture you take of this place?
           <InputForm childInput="people" next="normal" />
         </div>
       </div>

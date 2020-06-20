@@ -33,8 +33,8 @@ const Start = () => {
           >
             <div className="typewriter">
               <h1 className="has-text-black">
-                Put on your headphones and enter full screen. <br />
-                The experience should be done on a computer.
+                Before you are proceeding, make sure you are using your computer
+                and have your headphones on.
               </h1>
             </div>
           </div>

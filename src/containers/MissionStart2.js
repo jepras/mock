@@ -3,7 +3,7 @@ import { StepContext } from '../contexts/StepContext';
 import { Video } from 'cloudinary-react';
 
 import jen4 from '../assets/media/aud/jen4.wav';
-import deepbreath from '../assets/media/aud/deepbreath.wav';
+import breath from '../assets/media/aud/breath.wav';
 
 const MissionStart2 = () => {
   const [playVideo, setPlayVideo] = useState(null);
@@ -68,7 +68,7 @@ const MissionStart2 = () => {
       <audio
         controls
         autoPlay
-        src={deepbreath}
+        src={breath}
         loop={false}
         style={{ display: 'none' }}
       >

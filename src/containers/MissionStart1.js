@@ -4,7 +4,7 @@ import { StepContext } from '../contexts/StepContext';
 import { Video } from 'cloudinary-react';
 
 import noise from '../assets/media/aud/noise.wav';
-import deepbreath from '../assets/media/aud/deepbreath.wav';
+import breath from '../assets/media/aud/breath.wav';
 /* import jen2 from '../assets/media/aud/jen2.wav';
   import jen3 from '../assets/media/aud/jen3.wav'; */
 
@@ -93,7 +93,7 @@ const MissionStart = () => {
       <div className="fullscreen-bg">
         <Video
           cloudName="jepras"
-          publicId="tvnoise"
+          publicId="Flicker"
           className="fullscreen-bg__video"
           poster="false"
           autoPlay
@@ -132,7 +132,7 @@ const MissionStart = () => {
       <audio
         controls
         autoPlay
-        src={deepbreath}
+        src={breath}
         loop={false}
         style={{ display: 'none' }}
       >

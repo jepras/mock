@@ -13,11 +13,6 @@ const Place1 = (props) => {
   const { location } = useContext(FormContext);
   console.log('location & active step', location, activeStep);
 
-  if (activeStep === 2) {
-    console.log('hey!', activeStep);
-    console.log('props', props);
-  }
-
   const [defaultMap] = useState({
     zoom: 1,
   });

@@ -1,17 +1,14 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Video } from 'cloudinary-react';
 import vand from '../assets/media/aud/vand.wav';
 
 import VisionaryContent from '../containers/VisionaryContent';
-import { FormContext } from '../contexts/FormContext';
+import OverlayComponent from '../components/OverlayComponent';
 
 /* import steps */
 
 const Visionary = () => {
   const [playVideo, setPlayVideo] = useState(true);
-  const { user } = useContext(FormContext);
-
-  console.log('user: ', user);
 
   const Transition = () => {
     return (
@@ -22,6 +19,7 @@ const Visionary = () => {
           className="fullscreen-bg__video"
           poster="false"
           autoPlay
+          loop
         />
         <Video
           cloudName="jepras"
@@ -62,24 +60,13 @@ const Visionary = () => {
     );
   };
 
-  const Overlay = () => {
-    return (
-      <div
-        className={`${user.colour ? 'overlay-test' : 'none'}`}
-        style={{
-          backgroundColor: `${user.colour ? user.colour.value.value : 'none'}`,
-        }}
-      ></div>
-    );
-  };
-
   return (
     <>
       {playVideo === true ? (
         <Transition />
       ) : (
         <>
-          <Overlay />
+          <OverlayComponent />
           <Background />
           <VisionaryContent />
           <Audio />

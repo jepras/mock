@@ -8,6 +8,7 @@ const StepContextProvider = (props) => {
   const [activeVisionaryStep, setActiveVisionaryStep] = useState(0);
   const [activeMissionStep, setActiveMissionStep] = useState(0);
   const [activePlaceStep, setActivePlaceStep] = useState(0);
+  const [activePlacesStep, setActivePlacesStep] = useState(0);
   const steps = getSteps();
 
   /* const handleNext = (state) => {
@@ -34,6 +35,10 @@ const StepContextProvider = (props) => {
   const handleNextPlaceStep = (state) => {
     setActivePlaceStep((prevActivePlaceStep) => prevActivePlaceStep + 1);
   };
+  const handleNextPlacesStep = (state) => {
+    console.log('handlenexts being fired');
+    setActivePlacesStep((prevActivePlacesStep) => prevActivePlacesStep + 1);
+  };
 
   function getSteps() {
     return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
@@ -45,6 +50,7 @@ const StepContextProvider = (props) => {
         steps,
         activeStep,
         activePlaceStep,
+        activePlacesStep,
         activeMissionStep,
         activeVisionaryStep,
         activeArchitectStep,
@@ -54,6 +60,7 @@ const StepContextProvider = (props) => {
         handleNextVisionaryStep,
         handleNextMissionStep,
         handleNextPlaceStep,
+        handleNextPlacesStep,
       }}
     >
       {props.children}

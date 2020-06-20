@@ -6,6 +6,7 @@ import Intro from '../containers/Intro';
 import Invitation from '../containers/Invitation';
 import MissionStart1 from '../containers/MissionStart1';
 import MissionStart2 from '../containers/MissionStart2';
+import Places from '../containers/Places';
 import Place1 from '../containers/Place1';
 import Place2 from '../containers/Place2';
 import Place3 from '../containers/Place3';
@@ -27,14 +28,14 @@ const Experience = () => {
       case 3:
         return <MissionStart2 />;
       case 4:
-        return <Place1 />;
-      case 5:
+        return <Places />;
+      /* case 5:
         return <Place2 />;
       case 6:
         return <Place3 />;
       case 7:
-        return <Place4 />;
-      case 8:
+        return <Place4 />; */
+      case 5:
         return <Clouds1 />;
 
       default:

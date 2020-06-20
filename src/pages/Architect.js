@@ -1,16 +1,13 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Video } from 'cloudinary-react';
 
 import ArchitectContent from '../containers/ArchitectContent';
-import { FormContext } from '../contexts/FormContext';
+import OverlayComponent from '../components/OverlayComponent';
 
 /* import steps */
 
 const Architect = () => {
   const [playVideo, setPlayVideo] = useState(true);
-  const { user } = useContext(FormContext);
-
-  console.log('user: ', user);
 
   const Transition = () => {
     return (
@@ -21,7 +18,16 @@ const Architect = () => {
           className="fullscreen-bg__video"
           poster="false"
           autoPlay
+          loop
+        />
+        <Video
+          cloudName="jepras"
+          publicId="Jen_voice_5"
+          className="fullscreen-bg__video"
+          poster="false"
+          autoPlay
           onEnded={() => setPlayVideo(false)}
+          style={{ display: 'none' }}
         />
       </div>
     );
@@ -63,19 +69,13 @@ const Architect = () => {
     );
   };
 
-  /* const Overlay = () => {
-    return (
-      <div className={`${user.basicvalues ? 'fade-to-black' : 'none'}`}></div>
-    );
-  }; */
-
   return (
     <>
       {playVideo === true ? (
         <Transition />
       ) : (
         <>
-          {/* <Overlay /> */}
+          <OverlayComponent />
           <Background />
           <ArchitectContent />
           <Audio />

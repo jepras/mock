@@ -5,7 +5,7 @@ import './InputForm.css';
 
 const MapForm = () => {
   const { addLocation } = useContext(FormContext);
-  const { handleNext } = useContext(StepContext);
+  const { handleNextPlacesStep } = useContext(StepContext);
   const [value, setValue] = useState('');
   const [clicked, setClicked] = useState(null);
 
@@ -14,7 +14,7 @@ const MapForm = () => {
     event.preventDefault();
     fetchGeo();
     setClicked(true);
-    handleNext();
+    handleNextPlacesStep();
   };
 
   const fetchGeo = () => {

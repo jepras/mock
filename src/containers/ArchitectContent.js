@@ -39,6 +39,29 @@ const ArchitectContent = () => {
           <>
             <div className="center-div-mission" style={{ top: '70vh' }}>
               <div className="absolute mission-overlay content">
+                What colour is your new society?
+                <SelectForm childInput="colour" next="architect" />
+              </div>
+            </div>
+          </>
+        );
+
+      case 1:
+        return (
+          <>
+            <div className="center-div-mission" style={{ top: '70vh' }}>
+              <div className="absolute mission-overlay content">
+                What does the colour stand for?{' '}
+                <SelectForm childInput="colourAttributes" next="architect" />
+              </div>
+            </div>
+          </>
+        );
+      case 2:
+        return (
+          <>
+            <div className="center-div-mission" style={{ top: '70vh' }}>
+              <div className="absolute mission-overlay content">
                 What are the 3 most basic values our future society should have?
                 <SelectForm childInput="basicvalues" next="architect" />
               </div>
@@ -46,7 +69,7 @@ const ArchitectContent = () => {
           </>
         );
 
-      case 1:
+      case 3:
         return (
           <>
             <div className="center-div-mission" style={{ top: '70vh' }}>
@@ -58,7 +81,7 @@ const ArchitectContent = () => {
           </>
         );
 
-      case 2:
+      case 4:
         return (
           <>
             <div className="center-div-mission" style={{ top: '70vh' }}>
@@ -70,7 +93,7 @@ const ArchitectContent = () => {
             </div>
           </>
         );
-      case 3:
+      case 5:
         return (
           <>
             <div style={{ top: '70vh' }} className="center-div-mission">

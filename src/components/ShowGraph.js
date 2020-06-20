@@ -79,7 +79,7 @@ const ShowGraph = () => {
             doc.presentvalues[1] +
             ' & ' +
             doc.presentvalues[2] +
-            '</b>, but the 3 most important values for our future is :<b>' +
+            '</b>, but the 3 most important values for our future is: <b>' +
             doc.basicvalues[0] +
             ', ' +
             doc.basicvalues[1] +

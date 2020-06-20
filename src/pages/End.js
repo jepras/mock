@@ -1,4 +1,6 @@
 import React, { useContext } from 'react';
+import { Video } from 'cloudinary-react';
+
 import './End.scss';
 
 import { FormContext } from '../contexts/FormContext';
@@ -39,22 +41,24 @@ const End = () => {
     );
   };
 
+  */
+
   const Audio = () => {
     return (
       <Video
         cloudName="jepras"
-        publicId="ambience"
+        publicId="videoplayback"
         className="fullscreen-bg__video"
         poster="false"
         autoPlay
         style={{ display: 'none' }}
-      
       />
     );
-  }; */
+  };
 
   return (
     <>
+      <Audio />
       <div className="row">
         <div className="column">
           <ShowGraph />
@@ -126,10 +130,11 @@ const End = () => {
           </div>
 
           <p>
-            You mentioned {user.with} sharing the place you belong with you?
-            Would you like to invite them or anyone else to go through this
-            journey?
+            You mentioned {user.with} are/is with you at the place where you
+            feel a sense of belonging. Would you like to invite them or anyone
+            else to go through this journey?
           </p>
+          <p>Share it on Facebook</p>
           <div
             className="fb-share-button"
             data-href="https://buildthemock.netlify.app/"
@@ -142,7 +147,7 @@ const End = () => {
               href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbuildthemock.netlify.app%2F&amp;src=sdkpreparse"
               className="fb-xfbml-parse-ignore"
             >
-              Del
+              Share
             </a>
           </div>
         </div>

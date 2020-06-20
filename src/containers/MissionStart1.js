@@ -30,18 +30,16 @@ const MissionStart = () => {
                 </div>
               </div>
             ) : (
-              ''
+              <Video
+                cloudName="jepras"
+                publicId="Jen_voice_2"
+                className="fullscreen-bg__video"
+                poster="false"
+                autoPlay
+                style={{ display: 'none' }}
+                onEnded={() => setShowQuestion(true)}
+              />
             )}
-
-            <Video
-              cloudName="jepras"
-              publicId="Jen_voice_2"
-              className="fullscreen-bg__video"
-              poster="false"
-              autoPlay
-              style={{ display: 'none' }}
-              onEnded={() => setShowQuestion(true)}
-            />
           </>
         );
 

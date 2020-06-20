@@ -32,10 +32,10 @@ const Start = () => {
             style={{ position: 'relative', width: '100%' }}
           >
             <div className="typewriter">
-              <h1 className="has-text-black">
+              <p className="has-text-black">
                 Before you are proceeding, make sure you are using your computer
                 and have your headphones on.
-              </h1>
+              </p>
             </div>
           </div>
         </div>

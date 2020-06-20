@@ -20,6 +20,7 @@ const ShowGraph = () => {
       snapshotListenOptions: { includeMetadataChanges: true },
     }
   );
+  console.log(loading, error);
 
   if (values) {
     values.map((doc) =>

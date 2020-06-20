@@ -23,7 +23,6 @@ import StepContextProvider from './contexts/StepContext';
 import ArchitectContextProvider from './contexts/ArchitectContext';
 import VisionaryContextProvider from './contexts/VisionaryContext';
 import CloudsContextProvider from './contexts/CloudsContext';
-import AirtableGraph from './components/VisGraph';
 
 class App extends React.Component {
   render() {

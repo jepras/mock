@@ -54,7 +54,7 @@ const Test = () => {
     }
   }
 
-  const Background = () => {
+  /* const Background = () => {
     return (
       <div className="fullscreen-bg">
         <Video
@@ -63,12 +63,11 @@ const Test = () => {
           className="fullscreen-bg__video"
           poster="false"
           autoPlay
-          /* onEnded={() => setPlayVideo(true)} */
           muted
         />
       </div>
     );
-  };
+  }; */
 
   const Content = () => {
     return (

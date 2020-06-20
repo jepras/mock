@@ -43,7 +43,7 @@ const VisGraph = (props) => {
 
   const events = {
     select: function (event) {
-      var { nodes, edges } = event;
+      var { nodes } = event;
       console.log('Selected nodes:');
       console.log(nodes);
     },

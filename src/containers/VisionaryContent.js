@@ -6,12 +6,10 @@ import { VisionaryContext } from '../contexts/VisionaryContext';
 import SelectForm from '../components/SelectForm';
 import InputForm from '../components/InputForm';
 
-import firebase from '../config/fire';
-
 /* import steps */
 
 const VisionaryContent = () => {
-  const { user, submitData } = useContext(FormContext);
+  const { submitData } = useContext(FormContext);
   const { activeVisionaryStep } = useContext(VisionaryContext);
   console.log('current step: ', activeVisionaryStep);
 

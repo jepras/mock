@@ -11,7 +11,7 @@ const End = () => {
 
   console.log('user: ', user);
 
-  const Content = () => {
+  /* const Content = () => {
     return (
       <div className="fullscreen-bg">
         <p>the end</p>
@@ -27,14 +27,10 @@ const End = () => {
           cloudName="jepras"
           publicId="cropped-sphere"
           className="fullscreen-bg__video"
-          /* className={`${
-            fading
-              ? 'fade-to-black fullscreen-bg__video'
-              : 'fullscreen-bg__video'
-          }`} */
+        
           poster="false"
           autoPlay
-          /* onEnded={() => setPlayVideo(true)} */
+  
           muted
           loop
         />
@@ -51,10 +47,10 @@ const End = () => {
         poster="false"
         autoPlay
         style={{ display: 'none' }}
-        /* onEnded={() => setPlayVideo(true)} */
+      
       />
     );
-  };
+  }; */
 
   return (
     <>
